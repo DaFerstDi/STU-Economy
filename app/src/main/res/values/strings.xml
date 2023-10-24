@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">STU-Economy</string>
+    <string name="TEXTUS">Поздравляю, ты открыл это приложение!</string>
+    <string name="btn_click">Нажми на эту кнопку столько раз, сколько считаешь нужным</string>
 </resources>
