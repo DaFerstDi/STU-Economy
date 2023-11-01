@@ -9,41 +9,42 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="426dp"
+        android:layout_height="131dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/train" />
+        app:srcCompat="@drawable/train"
+        tools:layout_editor_absoluteY="71dp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="263dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="268dp"
         android:text="@string/name"
         android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
-        android:layout_marginTop="300dp"
+        android:layout_width="275dp"
+        android:layout_height="70dp"
         android:backgroundTint="@color/btn"
         android:text="@string/main_play"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        tools:layout_editor_absoluteY="437dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
+        android:layout_width="275dp"
+        android:layout_height="70dp"
         android:backgroundTint="@color/btn"
         android:text="@string/main_rules"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,8 +53,8 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
+        android:layout_width="275dp"
+        android:layout_height="70dp"
         android:backgroundTint="@color/btn"
         android:text="@string/main_settings"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,8 +63,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="150sp"
-        android:layout_height="60sp"
+        android:layout_width="275dp"
+        android:layout_height="70dp"
         android:backgroundTint="@color/btn"
         android:text="@string/main_about"
         app:layout_constraintEnd_toEndOf="parent"
