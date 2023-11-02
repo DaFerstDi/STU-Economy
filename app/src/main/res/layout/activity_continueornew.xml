@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rails"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="296dp"
+        android:layout_height="428dp"
+        android:rotationX="-15"
+        android:rotationY="-30"
+        app:srcCompat="@drawable/pngwing"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="402dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="351dp"
+        android:layout_height="94dp"
+        android:background="#4F008EFF"
+        android:backgroundTint="#003F51B5"
+        android:fontFamily="sans-serif-black"
+        android:hapticFeedbackEnabled="false"
+        android:rotationX="-12"
+        android:rotationY="-30"
+        android:shadowColor="#FF0000"
+        android:text="@string/continuegame"
+        android:textColor="#DA049D"
+        android:textColorHighlight="#FF0000"
+        android:textColorHint="#FF0000"
+        android:textColorLink="#AF1E1E"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#D60909"
+        app:strokeColor="#FF0000"
+        tools:layout_editor_absoluteY="573dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="500dp"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/train"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="296dp"
+        android:layout_height="428dp"
+        android:rotationX="-15"
+        android:rotationY="-30"
+        app:srcCompat="@drawable/pngwing"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="213dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="172dp"
+        android:fontFamily="serif"
+        android:rotationX="25"
+        android:rotationY="-33"
+        android:text="@string/name"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="420dp"
+        android:layout_height="84dp"
+        android:background="#4F0060AC"
+        android:backgroundTint="#003F51B5"
+        android:fontFamily="sans-serif-black"
+        android:hapticFeedbackEnabled="false"
+        android:rotationX="-12"
+        android:rotationY="-30"
+        android:shadowColor="#FF0000"
+        android:text="@string/newgame"
+        android:textColor="#DA049D"
+        android:textColorHighlight="#FF0000"
+        android:textColorHint="#FF0000"
+        android:textColorLink="#AF1E1E"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#D60909"
+        app:strokeColor="#FF0000"
+        tools:layout_editor_absoluteY="416dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
