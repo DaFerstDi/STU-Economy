@@ -36,49 +36,26 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="275dp"
-        android:layout_height="70dp"
+        android:layout_width="342dp"
+        android:layout_height="117dp"
         android:backgroundTint="@color/btn"
-        android:text="@string/main_play"
-        android:textSize="24sp"
+        android:text="@string/newgame"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="398dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="275dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/btn"
-        android:text="@string/main_rules"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        tools:layout_editor_absoluteY="386dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="275dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="333dp"
+        android:layout_height="125dp"
         android:backgroundTint="@color/btn"
-        android:text="@string/main_settings"
-        android:textSize="24sp"
+        android:text="@string/continuegame"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="275dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/btn"
-        android:text="@string/main_about"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        tools:layout_editor_absoluteY="558dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
