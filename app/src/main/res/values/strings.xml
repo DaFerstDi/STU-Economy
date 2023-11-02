@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">STU-Economy</string>
-    <string name="TEXTUS">Поздравляю, ты открыл это приложение!</string>
+    <string name="name">МОНОПОЛИЯ</string>
+    <string name="main_play">Играть</string>
+    <string name="main_rules">Правила</string>
+    <string name="main_settings">Настройки</string>
+    <string name="main_about">О приложении</string>
     <string name="btn_click">Нажми на эту кнопку столько раз, сколько считаешь нужным</string>
 </resources>
