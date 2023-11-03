@@ -11,6 +11,7 @@ public class rules extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
+        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         WebView webView = findViewById(R.id.rulesPage);
         webView.loadUrl("file:///android_asset/rules.html");
     }

@@ -3,6 +3,8 @@
     <style name="Base.Theme.STUEconomy" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/btn</item>
+        <item name="colorSecondary">@color/bg</item>
     </style>
 
     <style name="Theme.STUEconomy" parent="Base.Theme.STUEconomy" />

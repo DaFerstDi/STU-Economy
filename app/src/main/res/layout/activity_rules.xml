@@ -8,10 +8,12 @@
 
     <WebView
         android:id="@+id/rulesPage"
-        android:layout_width="409dp"
-        android:layout_height="889dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/bg"
         android:backgroundTint="@color/bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
