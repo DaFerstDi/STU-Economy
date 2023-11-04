@@ -1,19 +1,12 @@
 package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -36,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goRulesActivity(View v) {
         Intent intent = new Intent(this, rules.class);
+        startActivity(intent);
+    }
+
+    public void goAboutActivity(View v) {
+        Intent intent = new Intent(this, About.class);
+        startActivity(intent);
+    }
+
+    public void goSettingsActivity(View v) {
+        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 
