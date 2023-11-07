@@ -63,7 +63,7 @@
         android:id="@+id/textView"
         android:layout_width="213dp"
         android:layout_height="63dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/faster_one"
         android:rotationX="25"
         android:rotationY="-33"
         android:text="@string/name"

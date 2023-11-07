@@ -14,6 +14,9 @@
         android:theme="@style/Theme.STUEconomy"
         tools:targetApi="31">
         <activity
+            android:name=".gamestart"
+            android:exported="false" />
+        <activity
             android:name=".Settings"
             android:exported="false" />
         <activity
