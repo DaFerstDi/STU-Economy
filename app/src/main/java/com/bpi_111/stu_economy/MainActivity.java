@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goNG(View v) {
+        Intent intent = new Intent(this, gamestart.class);
+        startActivity(intent);
+    }
+
     @Override public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.exit_ask)

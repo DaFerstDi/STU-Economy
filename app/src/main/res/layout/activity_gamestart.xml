@@ -4,36 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/bg"
     tools:context=".gamestart">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="186dp"
+        android:layout_height="558dp"
+        android:layout_marginTop="-130dp"
+        android:rotation="150"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pochemu" />
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="230dp"
         android:layout_height="575dp"
-        android:layout_marginTop="231dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="-80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pochemu" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="198dp"
         android:layout_height="448dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="228dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="-60dp"
         android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pochemu" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="250dp"
+        android:layout_height="397dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="-50dp"
+        android:rotation="-150"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pochemu" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="186dp"
-        android:layout_height="84dp"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="109dp"
-        android:layout_marginEnd="113dp"
+        android:onClick="sPIN"
+        android:rotation="1"
         android:text="@string/pochemu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
