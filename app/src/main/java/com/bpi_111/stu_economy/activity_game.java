@@ -25,8 +25,15 @@ public class activity_game extends AppCompatActivity {
         startActivity(intent);
     }
     public void goCommandEnterActivity(View v) {
-        Intent intent = new Intent(this, Command_enter.class);
+        Data.setDefault();
+        Data.save();
+        Intent intent = new Intent(this, comand_enter_2.class);
         startActivity(intent);
+    }
+
+    public void resume(View v) {
+        Data.load();
+
     }
 
 }

@@ -6,7 +6,11 @@
     <color name="btn">#DEB887</color>
     <color name="text">#696969</color>
     <color name="red">#FF0000</color>
+    <color name="lightRed">#ff6464</color>
     <color name="blue">#0000FF</color>
+    <color name="lightBlue">#6464FF</color>
     <color name="green">#008000</color>
+    <color name="lightGreen">#648064</color>
     <color name="yellow">#FFFF00</color>
+    <color name="lightYellow">#c8c800</color>
 </resources>
