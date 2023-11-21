@@ -8,17 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
-public class MainActivity extends AppCompatActivity {
-
+public class Command_enter3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_command_enter3);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
     }
 
     @Override
@@ -27,36 +23,18 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(0,0);
     }
 
-    public void goPlayActivity(View v){
-            Intent intent = new Intent(this, activity_game.class);
-            startActivity(intent);
-    }
-    public void goRulesActivity(View v) {
-        Intent intent = new Intent(this, rules.class);
-        startActivity(intent);
-    }
-
-    public void goAboutActivity(View v) {
-        Intent intent = new Intent(this, About.class);
-        startActivity(intent);
-    }
-
-    public void goSettingsActivity(View v) {
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
-    }
-
-    @Override public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.exit_ask)
+    public void nextBt(View V){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter3.this);
+        builder.setTitle(R.string.start_ask)
                 .setCancelable(true)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
+                        Intent intent = new Intent(V.getContext(), activity_game.class);
+                        startActivity(intent);
                     }
                 })
-                .setNegativeButton(R.string.TRAIN, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();

@@ -16,6 +16,7 @@ public class Data {
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static String _event = "";
     public static int _year = 1;
+    public static int _new_comm_inp = 1;
 
     static {
         _c1.put("name", "");
@@ -141,7 +142,6 @@ public class Data {
         _c4.put("cis", Integer.parseInt(sp[4].split("&")[4]));
         _c4.put("pl", Integer.parseInt(sp[4].split("&")[5]));
         _c4.put("kr", Integer.parseInt(sp[4].split("&")[6]));
-
     }
 
 

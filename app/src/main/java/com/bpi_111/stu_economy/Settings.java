@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 
 public class Settings extends AppCompatActivity {
@@ -20,16 +21,20 @@ public class Settings extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
-        /*
-        ProgressBar progress = findViewById(R.id.progressBar);
-        int i = 0;
-        while (true){
-            if (i==100)i=0;
-            else i++;
-            progress.setProgress(i);
-        }
-         */
+        CheckBox cb = findViewById(R.id.checkBox);
+        cb.setChecked(Data._new_comm_inp == 1);
+
+
+
     }
-
-
+    public void onClickCk1(View v) {
+        CheckBox cb = findViewById(R.id.checkBox);
+        if (cb.isChecked()){
+            Data._new_comm_inp = 1;
+        }
+        else{
+            Data._new_comm_inp = 0;
+        }
+    }
 }
+

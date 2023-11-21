@@ -25,10 +25,17 @@ public class activity_game extends AppCompatActivity {
         startActivity(intent);
     }
     public void goCommandEnterActivity(View v) {
-        Data.setDefault();
-        Data.save();
-        Intent intent = new Intent(this, comand_enter_2.class);
-        startActivity(intent);
+        if (Data._new_comm_inp == 1){
+            Data.setDefault();
+            Data.save();
+            Intent intent = new Intent(this, Command_enter.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, Command_enter3.class);
+            startActivity(intent);
+        }
+
     }
 
     public void resume(View v) {
