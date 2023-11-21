@@ -17,6 +17,7 @@ public class Data {
     public static String _event = "";
     public static int _year = 1;
     public static int _new_comm_inp = 1;
+    public static int _easter = -4;
 
     static {
         _c1.put("name", "");

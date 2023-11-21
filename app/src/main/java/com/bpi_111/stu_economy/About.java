@@ -2,6 +2,7 @@ package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -21,5 +22,13 @@ public class About extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
+    }
+
+    public void imageClickAbout(View v){
+        if (Data._easter == -666){
+            Data._easter = -96;
+            Intent intent = new Intent(this, Easter.class);
+            startActivity(intent);
+        }
     }
 }

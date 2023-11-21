@@ -22,5 +22,6 @@
     <string name="command_name">Введите название…</string>
     <string name="next_emoji">➜</string>
     <string name="start_ask">Начать игру?</string>
-    v<string name="new_comand_input">Новый вид ввода команд</string>
+    v
+    <string name="new_comand_input">Новый вид ввода команд</string>
 </resources>

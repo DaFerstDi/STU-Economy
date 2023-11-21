@@ -65,4 +65,10 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    public void imageClickMain(View v){
+        if (Data._easter == 4){
+            Data._easter = -666;
+        }
+    }
 }

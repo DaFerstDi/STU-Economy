@@ -92,7 +92,7 @@ public class Command_enter extends AppCompatActivity {
                         .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(V.getContext(), activity_game.class);
+                                Intent intent = new Intent(V.getContext(), Year_display.class);
                                 startActivity(intent);
                             }
                         })
