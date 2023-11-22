@@ -40,8 +40,14 @@ public class Year_display extends AppCompatActivity {
 
         handler.postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(getApplicationContext(), activity_game.class);
-                startActivity(intent);
+                if (Data._year == 0) {
+                    Intent intent = new Intent(getApplicationContext(), Primary_show.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), Cubes.class);
+                    startActivity(intent);
+                }
             }
         }, 4000);
 

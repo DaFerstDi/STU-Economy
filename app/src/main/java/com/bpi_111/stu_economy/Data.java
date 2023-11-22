@@ -15,9 +15,10 @@ public class Data {
     public static HashMap<String, Object> _c3 = new HashMap<>();
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static String _event = "";
-    public static int _year = 1;
+    public static int _year = 0;
     public static int _new_comm_inp = 1;
     public static int _easter = -4;
+    public static int _move = 1; // Не сохраняется
 
     static {
         _c1.put("name", "");
@@ -57,7 +58,8 @@ public class Data {
 
     public static void setDefault(){
         _event = "";
-        _year = 1;
+        _year = 0;
+        _move = 1;
 
         _c1.put("name", "");
         _c1.put("points", 0);

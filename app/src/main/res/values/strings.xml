@@ -22,6 +22,15 @@
     <string name="command_name">Введите название…</string>
     <string name="next_emoji">➜</string>
     <string name="start_ask">Начать игру?</string>
-    v
+    <string name="plus">Купить</string>
     <string name="new_comand_input">Новый вид ввода команд</string>
+    <string name="ps_buy_pv">Вы действительно хотите купить 20 полувагонов за 1200000?</string>
+    <string name="ps_buy_cis">Вы действительно хотите купить 20 цистерн за 1200000?</string>
+    <string name="ps_buy_pl">Вы действительно хотите купить 20 платформ за 1200000?</string>
+    <string name="ps_buy_kr">Вы действительно хотите купить 20 крытых вагонов за 1200000?</string>
+    <string name="Yellow">Жёлтый</string>
+    <string name="Blue">Синий</string>
+    <string name="Red">Красный</string>
+    <string name="Calculate">Расчитать</string>
+    <string name="contract">Контракт</string>
 </resources>
