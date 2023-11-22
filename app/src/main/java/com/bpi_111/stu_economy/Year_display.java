@@ -27,14 +27,14 @@ public class Year_display extends AppCompatActivity {
 
         iv.setX(-750);
         tv.setAlpha(0.0001f);
-        iv.animate().x(1500).setDuration(1000).start();
+        iv.animate().x(1500).setDuration(3000).start();
         tv.setText("ГОД " + Data._year);
-        tv.animate().alpha(1).setDuration(600).setStartDelay(400).start();
+        tv.animate().alpha(1).setDuration(200).setStartDelay(1200).start();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                tv.animate().alpha(0).setDuration(1000).start();
+                tv.animate().alpha(0).setDuration(2000).start();
             }
         }, 1000);
 
@@ -43,7 +43,7 @@ public class Year_display extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), activity_game.class);
                 startActivity(intent);
             }
-        }, 2000);
+        }, 4000);
 
     }
 
