@@ -11,6 +11,11 @@ import android.widget.EditText;
 
 public class Cubes extends AppCompatActivity {
 
+    private String to = "";
+    private String cargo = "";
+    private int howM = 0;
+    private int howC = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +26,6 @@ public class Cubes extends AppCompatActivity {
         EditText yt = findViewById(R.id.editTextText5);
         EditText bt = findViewById(R.id.editTextText7);
         EditText rt = findViewById(R.id.editTextText8);
-
-        String  to = "";
-        String cargo = "";
-        int howM = 0;
-        int howC = 0;
 
         int y = Integer.parseInt(yt.getText().toString());
         int b = Integer.parseInt(bt.getText().toString());
@@ -251,12 +251,33 @@ public class Cubes extends AppCompatActivity {
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        lost(V);
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void lost(View V){
+        AlertDialog.Builder builder = new AlertDialog.Builder(Cubes.this);
+        builder.setTitle(R.string.attention)
+                .setCancelable(true)
+                .setMessage("Вы лох :(")
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
                     }
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
-
-
     }
+
 }

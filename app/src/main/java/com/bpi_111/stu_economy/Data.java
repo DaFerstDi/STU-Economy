@@ -19,6 +19,9 @@ public class Data {
     public static int _new_comm_inp = 1;
     public static int _easter = -4;
     public static int _move = 1; // Не сохраняется
+    public static final int OKT_P = 5;
+    public static final int SEV_K_P = 5;
+    public static final int DAL_V_p = 5;
 
     static {
         _c1.put("name", "");
@@ -28,6 +31,9 @@ public class Data {
         _c1.put("cis", 0);
         _c1.put("pl", 0);
         _c1.put("kr", 0);
+        _c1.put("OKT_P", 0);
+        _c1.put("SEV_K_P", 0);
+        _c1.put("DAL_V_p", 0);
 
         _c2.put("name", "");
         _c2.put("points", 0);

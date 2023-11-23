@@ -1,7 +1,7 @@
 <resources>
     <!--<string name=""></string>-->
     <string name="app_name">STU-Economy</string>
-    <string name="app_version">Beta</string>
+    <string name="app_version">0.47</string>
     <string name="name">RSM</string>
     <string name="newgame">Новая игра</string>
     <string name="continuegame">Продолжить игру</string>
@@ -33,4 +33,5 @@
     <string name="Red">Красный</string>
     <string name="Calculate">Расчитать</string>
     <string name="contract">Контракт</string>
+    <string name="attention">Внимание</string>
 </resources>
