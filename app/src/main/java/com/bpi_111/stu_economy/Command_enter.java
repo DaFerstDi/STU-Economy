@@ -46,7 +46,6 @@ public class Command_enter extends AppCompatActivity {
         EditText editTexttext = findViewById(R.id.editTextText6);
         TextView textView = findViewById(R.id.textView9);
         Button btn = findViewById(R.id.button9);
-        int d = cmd;
 
         switch (cmd){
             case (1):{
@@ -86,12 +85,25 @@ public class Command_enter extends AppCompatActivity {
                 break;
             }
             case (4):{
+                Data._c4.put("name", editTexttext.getText());
                 AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter.this);
                 builder.setTitle(R.string.start_ask)
                         .setCancelable(true)
                         .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                if (Data._c1.get("name").toString().equals("")){
+                                    Data._c1.put("name", "Первая");
+                                }
+                                if (Data._c2.get("name").toString().equals("")){
+                                    Data._c2.put("name", "Вторая");
+                                }
+                                if (Data._c3.get("name").toString().equals("")){
+                                    Data._c3.put("name", "Третья");
+                                }
+                                if (Data._c4.get("name").toString().equals("")){
+                                    Data._c4.put("name", "Четвёртая");
+                                }
                                 Intent intent = new Intent(V.getContext(), Year_display.class);
                                 startActivity(intent);
                             }

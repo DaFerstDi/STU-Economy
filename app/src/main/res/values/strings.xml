@@ -34,4 +34,11 @@
     <string name="Calculate">Расчитать</string>
     <string name="contract">Контракт</string>
     <string name="attention">Внимание</string>
+    <string name="editValues">Изменение значения</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="ok">Ок</string>
+    <string name="next">Далее</string>
+    <string name="yearEnd">Завершить год?</string>
+    <string name="score">Статистика</string>
 </resources>

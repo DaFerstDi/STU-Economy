@@ -15,7 +15,8 @@ public class Data {
     public static HashMap<String, Object> _c3 = new HashMap<>();
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static String _event = "";
-    public static int _year = 0;
+    public static int _year = 1;
+    public static boolean _cubes = true;
     public static int _new_comm_inp = 1;
     public static int _easter = -4;
     public static int _move = 1; // Не сохраняется
@@ -27,44 +28,101 @@ public class Data {
         _c1.put("name", "");
         _c1.put("points", 0);
         _c1.put("money", 4000000);
+        _c1.put("vict_p", 0);
         _c1.put("pv", 20);
         _c1.put("cis", 0);
         _c1.put("pl", 0);
         _c1.put("kr", 0);
-        _c1.put("OKT_P", 0);
-        _c1.put("SEV_K_P", 0);
-        _c1.put("DAL_V_p", 0);
+        _c1.put("ports_okt", 0);
+        _c1.put("ports_sk", 0);
+        _c1.put("ports_dv", 0);
+        _c1.put("kam_ug", 0);
+        _c1.put("koks", 0);
+        _c1.put("oil", 0);
+        _c1.put("iron", 0);
+        _c1.put("bl_met", 0);
+        _c1.put("str_gru", 0);
+        _c1.put("him_soda", 0);
+        _c1.put("cement", 0);
+        _c1.put("les", 0);
+        _c1.put("seed", 0);
+        _c1.put("kont", 0);
 
         _c2.put("name", "");
         _c2.put("points", 0);
         _c2.put("money", 4000000);
+        _c2.put("vict_p", 0);
         _c2.put("pv", 20);
         _c2.put("cis", 0);
         _c2.put("pl", 0);
         _c2.put("kr", 0);
+        _c2.put("ports_okt", 0);
+        _c2.put("ports_sk", 0);
+        _c2.put("ports_dv", 0);
+        _c2.put("kam_ug", 0);
+        _c2.put("koks", 0);
+        _c2.put("oil", 0);
+        _c2.put("iron", 0);
+        _c2.put("bl_met", 0);
+        _c2.put("str_gru", 0);
+        _c2.put("him_soda", 0);
+        _c2.put("cement", 0);
+        _c2.put("les", 0);
+        _c2.put("seed", 0);
+        _c2.put("kont", 0);
 
         _c3.put("name", "");
         _c3.put("points", 0);
         _c3.put("money", 4000000);
+        _c3.put("vict_p", 0);
         _c3.put("pv", 20);
         _c3.put("cis", 0);
         _c3.put("pl", 0);
         _c3.put("kr", 0);
+        _c3.put("ports_okt", 0);
+        _c3.put("ports_sk", 0);
+        _c3.put("ports_dv", 0);
+        _c3.put("kam_ug", 0);
+        _c3.put("koks", 0);
+        _c3.put("oil", 0);
+        _c3.put("iron", 0);
+        _c3.put("bl_met", 0);
+        _c3.put("str_gru", 0);
+        _c3.put("him_soda", 0);
+        _c3.put("cement", 0);
+        _c3.put("les", 0);
+        _c3.put("seed", 0);
+        _c3.put("kont", 0);
 
         _c4.put("name", "");
         _c4.put("points", 0);
         _c4.put("money", 4000000);
+        _c4.put("vict_p", 0);
         _c4.put("pv", 20);
         _c4.put("cis", 0);
         _c4.put("pl", 0);
         _c4.put("kr", 0);
+        _c4.put("ports_okt", 0);
+        _c4.put("ports_sk", 0);
+        _c4.put("ports_dv", 0);
+        _c4.put("kam_ug", 0);
+        _c4.put("koks", 0);
+        _c4.put("oil", 0);
+        _c4.put("iron", 0);
+        _c4.put("bl_met", 0);
+        _c4.put("str_gru", 0);
+        _c4.put("him_soda", 0);
+        _c4.put("cement", 0);
+        _c4.put("les", 0);
+        _c4.put("seed", 0);
+        _c4.put("kont", 0);
 
     }
 
 
     public static void setDefault(){
         _event = "";
-        _year = 0;
+        _year = 1;
         _move = 1;
 
         _c1.put("name", "");
