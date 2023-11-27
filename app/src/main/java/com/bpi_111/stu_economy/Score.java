@@ -69,19 +69,19 @@ public class Score extends AppCompatActivity {
             c3 += vag3c;
             c4 += vag4c;
         }
-        else if (vag2 == maxVag) {
+        if (vag2 == maxVag) {
             c1 += vag1c;
             c2 += vag2c*1.2;
             c3 += vag3c;
             c4 += vag4c;
         }
-        else if (vag3 == maxVag) {
+        if (vag3 == maxVag) {
             c1 += vag1c;
             c2 += vag2c;
             c3 += vag3c*1.2;
             c4 += vag4c;
         }
-        else if (vag4 == maxVag) {
+        if (vag4 == maxVag) {
             c1 += vag1c;
             c2 += vag2c;
             c3 += vag3c;
@@ -111,19 +111,19 @@ public class Score extends AppCompatActivity {
             c3 += pob3c;
             c4 += pob4c;
         }
-        else if (pob2 == maxPob) {
+        if (pob2 == maxPob) {
             c1 += pob1c;
             c2 += pob2c*1.5;
             c3 += pob3c;
             c4 += pob4c;
         }
-        else if (pob3 == maxPob) {
+        if (pob3 == maxPob) {
             c1 += pob1c;
             c2 += pob2c;
             c3 += pob3c*1.5;
             c4 += pob4c;
         }
-        else if (pob4 == maxPob) {
+        if (pob4 == maxPob) {
             c1 += pob1c;
             c2 += pob2c;
             c3 += pob3c;
