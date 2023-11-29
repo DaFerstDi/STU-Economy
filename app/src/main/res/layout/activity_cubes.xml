@@ -28,12 +28,12 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="@string/Red"
-        android:inputType="text"
-        android:textColor="@color/text"
+        android:inputType="numberSigned"
+        android:textColor="@color/red"
+        android:textColorHint="@color/lightRed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText7"
-        android:textColorHint="@color/lightRed" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
 
     <EditText
         android:id="@+id/editTextText5"
@@ -42,12 +42,12 @@
         android:layout_marginTop="200dp"
         android:ems="10"
         android:hint="@string/Yellow"
-        android:inputType="text"
-        android:textColor="@color/text"
+        android:inputType="numberSigned"
+        android:textColor="@color/yellow"
+        android:textColorHint="@color/lightYellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColorHint="@color/lightYellow" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextText7"
@@ -56,12 +56,12 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="@string/Blue"
-        android:inputType="text"
-        android:textColor="@color/text"
+        android:inputType="numberSigned"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/lightBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5"
-        android:textColorHint="@color/lightBlue"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
     <Button
         android:id="@+id/button6"
@@ -75,4 +75,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -212,28 +212,104 @@ public class Enter_values extends AppCompatActivity {
             }
             String j = "";
             switch (s){
-                case ("money"):{j = "Деньги"; break;}
-                case ("vict_p"):{j = "Победные очки"; break;}
-                case ("pv"):{j = "Полувагоны"; break;}
-                case ("cis"):{j = "Цистерны"; break;}
-                case ("pl"):{j = "Платформы"; break;}
-                case ("kr"):{j = "Крытые"; break;}
-                case ("ports_okt"):{j = "Порты Октябрьской ж.д."; break;}
-                case ("ports_sk"):{j = "Порты Северо-Кавказской ж.д."; break;}
-                case ("ports_dv"):{j = "Порты Дальневосточной ж.д."; break;}
-                case ("kam_ug"):{j = "Каменный уголь"; break;}
-                case ("koks"):{j = "Кокс"; break;}
-                case ("oil"):{j = "Нефть"; break;}
-                case ("iron"):{j = "Руда железная"; break;}
-                case ("bl_met"):{j = "Чёрные металлы"; break;}
-                case ("str_gru"):{j = "Строительные грузы"; break;}
-                case ("him_soda"):{j = "Химикаты и сода"; break;}
-                case ("cement"):{j = "Цемент"; break;}
-                case ("les"):{j = "Лесные грузы"; break;}
-                case ("seed"):{j = "Зерно"; break;}
-                case ("kont"):{j = "Грузы в контейнерах"; break;}
+                case ("money"):{
+                    j = "Деньги";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;}
+                case ("vict_p"):{
+                    j = "Победные очки";
+                    values.add(new Values(j, vl, R.drawable.zvizda));
+                    break;}
+                case ("pv"):{
+                    j = "Полувагоны";
+                    values.add(new Values(j, vl, R.drawable.poluvagon));
+                    break;
+                }
+                case ("cis"):{
+                    j = "Цистерны";
+                    values.add(new Values(j, vl, R.drawable.bochka));
+                    break;
+                }
+                case ("pl"):{
+                    j = "Платформы";
+                    values.add(new Values(j, vl, R.drawable.platforma));
+                    break;
+                }
+                case ("kr"):{
+                    j = "Крытые";
+                    values.add(new Values(j, vl, R.drawable.vagon));
+                    break;
+                }
+                case ("ports_okt"):{
+                    j = "Порты Октябрьской ж.д.";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("ports_sk"):{
+                    j = "Порты Северо-Кавказской ж.д.";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("ports_dv"):{
+                    j = "Порты Дальневосточной ж.д.";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("kam_ug"):{
+                    j = "Каменный уголь";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("koks"):{
+                    j = "Кокс";
+                    values.add(new Values(j, vl, R.drawable.koks));
+                    break;
+                }
+                case ("oil"):{
+                    j = "Нефть";
+                    values.add(new Values(j, vl, R.drawable.oil));
+                    break;
+                }
+                case ("iron"):{
+                    j = "Руда железная";
+                    values.add(new Values(j, vl, R.drawable.iron));
+                    break;
+                }
+                case ("bl_met"):{
+                    j = "Чёрные металлы";
+                    values.add(new Values(j, vl, R.drawable.bl_met));
+                    break;
+                }
+                case ("str_gru"):{
+                    j = "Строительные грузы";
+                    values.add(new Values(j, vl, R.drawable.str_gru));
+                    break;
+                }
+                case ("him_soda"):{
+                    j = "Химикаты и сода";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("cement"):{
+                    j = "Цемент";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("les"):{
+                    j = "Лесные грузы";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("seed"):{
+                    j = "Зерно";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;
+                }
+                case ("kont"):{
+                    j = "Грузы в контейнерах";
+                    values.add(new Values(j, vl, R.drawable.stu));
+                    break;}
             }
-            values.add(new Values(j, vl, R.drawable.stu));
         }
     }
 

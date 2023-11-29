@@ -46,22 +46,22 @@ public class Score extends AppCompatActivity {
         if (vag3>maxVag){ maxVag = vag3;}
         if (vag4>maxVag){ maxVag = vag4;}
 
-        int vag1c = 1200000 * Integer.parseInt(Data._c1.get("pv").toString())+
-                1600000 * Integer.parseInt(Data._c1.get("cis").toString())+
-                1000000 * Integer.parseInt(Data._c1.get("pl").toString())+
-                1400000 * Integer.parseInt(Data._c1.get("kr").toString());
-        int vag2c = 1200000 * Integer.parseInt(Data._c2.get("pv").toString())+
-                1600000 * Integer.parseInt(Data._c2.get("cis").toString())+
-                1000000 * Integer.parseInt(Data._c2.get("pl").toString())+
-                1400000 * Integer.parseInt(Data._c2.get("kr").toString());
-        int vag3c = 1200000 * Integer.parseInt(Data._c3.get("pv").toString())+
-                1600000 * Integer.parseInt(Data._c3.get("cis").toString())+
-                1000000 * Integer.parseInt(Data._c3.get("pl").toString())+
-                1400000 * Integer.parseInt(Data._c3.get("kr").toString());
-        int vag4c = 1200000 * Integer.parseInt(Data._c4.get("pv").toString())+
-                1600000 * Integer.parseInt(Data._c4.get("cis").toString())+
-                1000000 * Integer.parseInt(Data._c4.get("pl").toString())+
-                1400000 * Integer.parseInt(Data._c4.get("kr").toString());
+        int vag1c = 1200000 * Integer.parseInt(Data._c1.get("pv").toString())/10+
+                1600000 * Integer.parseInt(Data._c1.get("cis").toString())/10+
+                1000000 * Integer.parseInt(Data._c1.get("pl").toString())/10+
+                1400000 * Integer.parseInt(Data._c1.get("kr").toString())/10;
+        int vag2c = 1200000 * Integer.parseInt(Data._c2.get("pv").toString())/10+
+                1600000 * Integer.parseInt(Data._c2.get("cis").toString())/10+
+                1000000 * Integer.parseInt(Data._c2.get("pl").toString())/10+
+                1400000 * Integer.parseInt(Data._c2.get("kr").toString())/10;
+        int vag3c = 1200000 * Integer.parseInt(Data._c3.get("pv").toString())/10+
+                1600000 * Integer.parseInt(Data._c3.get("cis").toString())/10+
+                1000000 * Integer.parseInt(Data._c3.get("pl").toString())/10+
+                1400000 * Integer.parseInt(Data._c3.get("kr").toString())/10;
+        int vag4c = 1200000 * Integer.parseInt(Data._c4.get("pv").toString())/10+
+                1600000 * Integer.parseInt(Data._c4.get("cis").toString())/10+
+                1000000 * Integer.parseInt(Data._c4.get("pl").toString())/10+
+                1400000 * Integer.parseInt(Data._c4.get("kr").toString())/10;
 
         if (vag1 == maxVag) {
             c1 += vag1c*1.2;
