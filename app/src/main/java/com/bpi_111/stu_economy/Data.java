@@ -20,9 +20,6 @@ public class Data {
     public static int _new_comm_inp = 1;
     public static int _easter = -4;
     public static int _move = 1; // Не сохраняется
-    public static final int OKT_P = 5;
-    public static final int SEV_K_P = 5;
-    public static final int DAL_V_p = 5;
 
     static {
         _c1.put("name", "");

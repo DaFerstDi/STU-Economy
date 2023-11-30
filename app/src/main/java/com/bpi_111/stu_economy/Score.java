@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class Score extends AppCompatActivity {
+    int c1, c2, c3, c4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,20 +14,48 @@ public class Score extends AppCompatActivity {
         setContentView(R.layout.activity_score);
     }
 
+    private double Company(int command, String name, int cost) {
+        if (command == 1) {
+            int n = Integer.parseInt(Data._c1.get(name).toString());
+            double k = 1 + 0.2 * n;
+            double d = k * n * cost;
+            return d;
+        }
+        if (command == 2) {
+            int n = Integer.parseInt(Data._c2.get(name).toString());
+            double k = 1 + 0.2 * n;
+            return k * n * cost;
+        }
+        if (command == 3) {
+            int n = Integer.parseInt(Data._c3.get(name).toString());
+            double k = 1 + 0.2 * n;
+            return k * n * cost;
+        }
+        if (command == 4) {
+            int n = Integer.parseInt(Data._c4.get(name).toString());
+            double k = 1 + 0.2 * n;
+            return k * n * cost;
+        }
+        return 0.0;
+    }
+
+
     @Override
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
-        int c1=Integer.parseInt(Data._c1.get("money").toString()),
-                c2=Integer.parseInt(Data._c2.get("money").toString()),
-                c3=Integer.parseInt(Data._c3.get("money").toString()),
-                c4=Integer.parseInt(Data._c4.get("money").toString());
+        c1=Integer.parseInt(Data._c1.get("money").toString());
+        c2=Integer.parseInt(Data._c2.get("money").toString());
+        c3=Integer.parseInt(Data._c3.get("money").toString());
+        c4=Integer.parseInt(Data._c4.get("money").toString());
 
         TextView p1 = findViewById(R.id.p1_score);
         TextView p2 = findViewById(R.id.p2_score);
         TextView p3 = findViewById(R.id.p3_score);
         TextView p4 = findViewById(R.id.p4_score);
 
+
+        // Вагоны
         int maxVag = 0;
         int vag1 = Integer.parseInt(Data._c1.get("pv").toString())+
                 Integer.parseInt(Data._c1.get("cis").toString())+
@@ -66,33 +95,30 @@ public class Score extends AppCompatActivity {
                 1000000 * Integer.parseInt(Data._c4.get("pl").toString())/10+
                 1400000 * Integer.parseInt(Data._c4.get("kr").toString())/10;
 
+
         if (vag1 == maxVag) {
             c1 += vag1c*1.2;
-            c2 += vag2c;
-            c3 += vag3c;
-            c4 += vag4c;
+            vag1c = 0;
         }
         if (vag2 == maxVag) {
-            c1 += vag1c;
             c2 += vag2c*1.2;
-            c3 += vag3c;
-            c4 += vag4c;
+            vag2c = 0;
         }
         if (vag3 == maxVag) {
-            c1 += vag1c;
-            c2 += vag2c;
             c3 += vag3c*1.2;
-            c4 += vag4c;
+            vag3c = 0;
         }
         if (vag4 == maxVag) {
-            c1 += vag1c;
-            c2 += vag2c;
-            c3 += vag3c;
             c4 += vag4c*1.2;
+            vag4c = 0;
         }
+        c1 += vag1c;
+        c2 += vag2c;
+        c3 += vag3c;
+        c4 += vag4c;
 
 
-
+        // Победные очки
         int maxPob = 0;
         int pob1 = Integer.parseInt(Data._c1.get("vict_p").toString());
         int pob2 = Integer.parseInt(Data._c2.get("vict_p").toString());
@@ -134,68 +160,90 @@ public class Score extends AppCompatActivity {
         }
 
 
-/*
-//Порты не работают
-        int ports1 = Integer.parseInt(Data._c1.get("ports").toString());
-        int ports2 = Integer.parseInt(Data._c2.get("ports").toString());
-        int ports3 = Integer.parseInt(Data._c3.get("ports").toString());
-        int ports4 = Integer.parseInt(Data._c4.get("ports").toString());
-
-        double k1p = 1 + 0.2 * ports1,
-                k2p = 1 + 0.2 * ports2,
-                k3p = 1 + 0.2 * ports2,
-                k4p = 1 + 0.2 * ports2;
-
-        int ports1c = 100000 * Integer.parseInt(Data._c1.get("ports").toString());
-        int ports2c = 100000 * Integer.parseInt(Data._c2.get("ports").toString());
-        int ports3c = 100000 * Integer.parseInt(Data._c3.get("ports").toString());
-        int ports4c = 100000 * Integer.parseInt(Data._c4.get("ports").toString());
-*/
-
+        // Порты
         double ports1K = 1 + 0.2 * Integer.parseInt(Data._c1.get("ports_okt").toString())+
                 Integer.parseInt(Data._c1.get("ports_sk").toString())+
-                Integer.parseInt(Data._c1.get("ports_dv").toString())+
-                Integer.parseInt(Data._c1.get("kam_ug").toString());
+                Integer.parseInt(Data._c1.get("ports_dv").toString());
 
         double ports2K = 1 + 0.2 * Integer.parseInt(Data._c2.get("ports_okt").toString())+
                 Integer.parseInt(Data._c2.get("ports_sk").toString())+
-                Integer.parseInt(Data._c2.get("ports_dv").toString())+
-                Integer.parseInt(Data._c2.get("kam_ug").toString());
+                Integer.parseInt(Data._c2.get("ports_dv").toString());
 
         double ports3K = 1 + 0.2 * Integer.parseInt(Data._c3.get("ports_okt").toString())+
                 Integer.parseInt(Data._c3.get("ports_sk").toString())+
-                Integer.parseInt(Data._c3.get("ports_dv").toString())+
-                Integer.parseInt(Data._c3.get("kam_ug").toString());
+                Integer.parseInt(Data._c3.get("ports_dv").toString());
 
         double ports4K = 1 + 0.2 * Integer.parseInt(Data._c4.get("ports_okt").toString())+
                 Integer.parseInt(Data._c4.get("ports_sk").toString())+
-                Integer.parseInt(Data._c4.get("ports_dv").toString())+
-                Integer.parseInt(Data._c4.get("kam_ug").toString());
+                Integer.parseInt(Data._c4.get("ports_dv").toString());
 
 
         c1 += ports1K * ((Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000));
+                Integer.parseInt(Data._c1.get("ports_sk").toString())*1000000 +
+                Integer.parseInt(Data._c1.get("ports_dv").toString())*5000000));
 
-        c2 += ports1K * ((Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000));
+        c2 += ports2K * ((Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c2.get("ports_sk").toString())*1000000 +
+                Integer.parseInt(Data._c2.get("ports_dv").toString())*5000000));
 
-        c2 += ports1K * ((Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000));
+        c3 += ports3K * ((Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c3.get("ports_sk").toString())*1000000 +
+                Integer.parseInt(Data._c3.get("ports_dv").toString())*5000000));
 
-        c2 += ports1K * ((Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
-                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000));
+        c4 += ports4K * ((Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c4.get("ports_sk").toString())*1000000 +
+                Integer.parseInt(Data._c4.get("ports_dv").toString())*5000000));
 
 
+        c1 += Company(1, "kam_ug", 5500000);
+        c1 += Company(1, "koks", 1000000);
+        c1 += Company(1, "oil", 2500000);
+        c1 += Company(1, "iron", 700000);
+        c1 += Company(1, "bl_met", 4500000);
+        c1 += Company(1, "str_gru", 500000);
+        c1 += Company(1, "him_soda", 5000000);
+        c1 += Company(1, "cement", 400000);
+        c1 += Company(1, "les", 600000);
+        c1 += Company(1, "seed", 2000000);
+        c1 += Company(1, "kont", 3000000);
 
+        c2 += Company(2, "kam_ug", 5500000);
+        c2 += Company(2, "koks", 1000000);
+        c2 += Company(2, "oil", 2500000);
+        c2 += Company(2, "iron", 700000);
+        c2 += Company(2, "bl_met", 4500000);
+        c2 += Company(2, "str_gru", 500000);
+        c2 += Company(2, "him_soda", 5000000);
+        c2 += Company(2, "cement", 400000);
+        c2 += Company(2, "les", 600000);
+        c2 += Company(2, "seed", 2000000);
+        c2 += Company(2, "kont", 3000000);
 
+        c3 += Company(3, "kam_ug", 5500000);
+        c3 += Company(3, "koks", 1000000);
+        c3 += Company(3, "oil", 2500000);
+        c3 += Company(3, "iron", 700000);
+        c3 += Company(3, "bl_met", 4500000);
+        c3 += Company(3, "str_gru", 500000);
+        c3 += Company(3, "him_soda", 5000000);
+        c3 += Company(3, "cement", 400000);
+        c3 += Company(3, "les", 600000);
+        c3 += Company(3, "seed", 2000000);
+        c3 += Company(3, "kont", 3000000);
+
+        c4 += Company(4, "kam_ug", 5500000);
+        c4 += Company(4, "koks", 1000000);
+        c4 += Company(4, "oil", 2500000);
+        c4 += Company(4, "iron", 700000);
+        c4 += Company(4, "bl_met", 4500000);
+        c4 += Company(4, "str_gru", 500000);
+        c4 += Company(4, "him_soda", 5000000);
+        c4 += Company(4, "cement", 400000);
+        c4 += Company(4, "les", 600000);
+        c4 += Company(4, "seed", 2000000);
+        c4 += Company(4, "kont", 3000000);
+
+        // Рейтинг
         if (c1>=c2 && c1>=c3 && c1>=c4){
             p1.setText("1: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
             if (c2>=c3 && c2>=c4){

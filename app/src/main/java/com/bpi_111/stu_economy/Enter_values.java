@@ -90,6 +90,7 @@ public class Enter_values extends AppCompatActivity {
                 alert.setTitle(R.string.editValues);
                 alert.setMessage("Введите новое значение для " + value.getName());
                 EditText input = new EditText(Enter_values.this);
+                //input.setRawInputType("numberSigned");
                 String v = name;
                 String vNew = "1";
                 switch (v){
@@ -132,6 +133,19 @@ public class Enter_values extends AppCompatActivity {
                 alert.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         String value = input.getText().toString();
+                        if (value.equals("")){
+                            value = "0";
+                        }
+                        try {
+                            int d = Integer.parseInt(value);
+                            double b = Math.sqrt(d);
+                            if (b != b){
+                                throw new NumberFormatException();
+                            }
+                        }
+                        catch (Exception e){
+                            return;
+                        }
                         String nm = "1";
                         switch (name){
                             case ("Деньги"):{nm = "money"; break;}
