@@ -17,7 +17,10 @@ public class Score extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
-        int c1=0, c2=0, c3=0, c4=0;
+        int c1=Integer.parseInt(Data._c1.get("money").toString()),
+                c2=Integer.parseInt(Data._c2.get("money").toString()),
+                c3=Integer.parseInt(Data._c3.get("money").toString()),
+                c4=Integer.parseInt(Data._c4.get("money").toString());
 
         TextView p1 = findViewById(R.id.p1_score);
         TextView p2 = findViewById(R.id.p2_score);
@@ -148,6 +151,48 @@ public class Score extends AppCompatActivity {
         int ports3c = 100000 * Integer.parseInt(Data._c3.get("ports").toString());
         int ports4c = 100000 * Integer.parseInt(Data._c4.get("ports").toString());
 */
+
+        double ports1K = 1 + 0.2 * Integer.parseInt(Data._c1.get("ports_okt").toString())+
+                Integer.parseInt(Data._c1.get("ports_sk").toString())+
+                Integer.parseInt(Data._c1.get("ports_dv").toString())+
+                Integer.parseInt(Data._c1.get("kam_ug").toString());
+
+        double ports2K = 1 + 0.2 * Integer.parseInt(Data._c2.get("ports_okt").toString())+
+                Integer.parseInt(Data._c2.get("ports_sk").toString())+
+                Integer.parseInt(Data._c2.get("ports_dv").toString())+
+                Integer.parseInt(Data._c2.get("kam_ug").toString());
+
+        double ports3K = 1 + 0.2 * Integer.parseInt(Data._c3.get("ports_okt").toString())+
+                Integer.parseInt(Data._c3.get("ports_sk").toString())+
+                Integer.parseInt(Data._c3.get("ports_dv").toString())+
+                Integer.parseInt(Data._c3.get("kam_ug").toString());
+
+        double ports4K = 1 + 0.2 * Integer.parseInt(Data._c4.get("ports_okt").toString())+
+                Integer.parseInt(Data._c4.get("ports_sk").toString())+
+                Integer.parseInt(Data._c4.get("ports_dv").toString())+
+                Integer.parseInt(Data._c4.get("kam_ug").toString());
+
+
+        c1 += ports1K * ((Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c1.get("ports_okt").toString())*4000000));
+
+        c2 += ports1K * ((Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c2.get("ports_okt").toString())*4000000));
+
+        c2 += ports1K * ((Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c3.get("ports_okt").toString())*4000000));
+
+        c2 += ports1K * ((Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000 +
+                Integer.parseInt(Data._c4.get("ports_okt").toString())*4000000));
+
 
 
 
