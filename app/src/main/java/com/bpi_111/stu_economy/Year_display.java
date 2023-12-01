@@ -26,8 +26,8 @@ public class Year_display extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView10);
 
         iv.setX(-750);
-        tv.setAlpha(0.0001f);
-        iv.animate().x(1500).setDuration(3000).start();
+        tv.setAlpha(0.001f);
+        iv.animate().x(1500).setDuration(2000).start();
         if (Data._cubes) {
             tv.setTextSize(50);
             tv.setText("ГОД " + Data._year);
@@ -36,30 +36,45 @@ public class Year_display extends AppCompatActivity {
             tv.setTextSize(40);
             tv.setText("КОНЕЦ ГОДА");
         }
-        tv.animate().alpha(1).setDuration(200).setStartDelay(1300).start();
+        tv.animate().alpha(1.0f).setDuration(400).setStartDelay(800).start();
 
+
+        Handler handler = new Handler();
+        Listener();
+    }
+
+    private void goNext(){
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                tv.animate().alpha(0).setDuration(2000).start();
-            }
-        }, 1000);
-
-        handler.postDelayed(new Runnable() {
-            public void run() {
                 if (Data._cubes) {
-                    Data._cubes = false;
                     Intent intent = new Intent(getApplicationContext(), Cubes.class);
                     startActivity(intent);
                 }
                 else {
-                    Data._cubes = true;
                     Intent intent = new Intent(getApplicationContext(), Enter_values.class);
                     startActivity(intent);
                 }
             }
-        }, 3000);
+        }, 1800);
+    }
 
+    private void Listener(){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+
+            public void run() {
+
+                TextView tv = findViewById(R.id.textView10);
+                if (tv.getAlpha() == 1.0f) {
+                    tv.animate().alpha(0).setDuration(1000).start();
+                    goNext();
+                }
+                else {
+                    Listener();
+                }
+            }
+        }, 500);
     }
 
 

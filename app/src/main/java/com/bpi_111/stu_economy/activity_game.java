@@ -32,7 +32,6 @@ public class activity_game extends AppCompatActivity {
     public void goCommandEnterActivity(View v) {
         if (Data._new_comm_inp == 1){
             Data.setDefault();
-            Data.save();
             Intent intent = new Intent(this, Command_enter.class);
             startActivity(intent);
         }
@@ -43,13 +42,15 @@ public class activity_game extends AppCompatActivity {
 
     }
 
-    public void imageClickGame(View v){
-        Data._easter += 1;
+    public void goReturnGame(View v) {
+        Data.load();
+        Intent intent = new Intent(this, Year_display.class);
+        startActivity(intent);
+
     }
 
-    public void resume(View v) {
-        Data.load();
-
+    public void imageClickGame(View v){
+        Data._easter += 1;
     }
 
 }

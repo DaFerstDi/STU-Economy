@@ -41,4 +41,9 @@
     <string name="next">Далее</string>
     <string name="yearEnd">Завершить год?</string>
     <string name="score">Статистика</string>
+    <string name="select_move">Выберите действие</string>
+    <string name="next_year">Следующий год</string>
+    <string name="finish">Закончить игру</string>
+    <string name="congratulations">Поздравляем!</string>
+    <string name="exit">Выход</string>
 </resources>

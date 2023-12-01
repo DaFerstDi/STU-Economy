@@ -27,7 +27,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/btn"
-        android:onClick="resume"
+        android:onClick="goReturnGame"
         android:text="@string/continuegame"
         android:textColor="@color/text"
         android:textSize="24sp"

@@ -2,8 +2,14 @@ package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Score extends AppCompatActivity {
     int c1, c2, c3, c4;
@@ -246,152 +252,260 @@ public class Score extends AppCompatActivity {
         // Рейтинг
         if (c1>=c2 && c1>=c3 && c1>=c4){
             p1.setText("1: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+            p1.setTextColor(getResources().getColor(R.color.red));
+            Data._leader = 1;
             if (c2>=c3 && c2>=c4){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                p2.setTextColor(getResources().getColor(R.color.blue));
                 if (c3 >= c4) {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
             }
             else if (c3 >= c2 && c3 >= c4){
                 p2.setText("2: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                p2.setTextColor(getResources().getColor(R.color.green));
                 if (c2 >= c4) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
             else {
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c2 >= c3) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
                 else {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
         }
 
         else if (c2>=c1 && c2>=c3 && c2>=c4){
             p1.setText("1: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+            p1.setTextColor(getResources().getColor(R.color.blue));
+            Data._leader = 2;
             if (c1>=c3 && c1>=c4){
                 p2.setText("2: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                p2.setTextColor(getResources().getColor(R.color.red));
                 if (c3 >= c4) {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
             }
             else if (c3 >= c1 && c3 >= c4){
                 p2.setText("2: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                p2.setTextColor(getResources().getColor(R.color.green));
                 if (c1 >= c4) {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
             }
             else {
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c1 >= c3) {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
                 else {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
             }
         }
 
         else if (c3>=c1 && c3>=c2 && c3>=c4){
             p1.setText("1: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+            p1.setTextColor(getResources().getColor(R.color.green));
+            Data._leader = 3;
             if (c2>=c3 && c2>=c4){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                p2.setTextColor(getResources().getColor(R.color.blue));
                 if (c1 >= c4) {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
             }
             else if (c1 >= c2 && c1 >= c4){
                 p2.setText("2: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                p2.setTextColor(getResources().getColor(R.color.red));
                 if (c2 >= c4) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.yellow));
                 }
                 else {
                     p3.setText("3: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.yellow));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
             else {
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+                p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c2 >= c1) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
                 else {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
         }
 
         else {
             p1.setText("1: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
+            p1.setTextColor(getResources().getColor(R.color.yellow));
+            Data._leader = 4;
             if (c2>=c3 && c2>=c1){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                p2.setTextColor(getResources().getColor(R.color.blue));
                 if (c3 >= c1) {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
                 else {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
             }
             else if (c3 >= c2 && c3 >= c1){
                 p2.setText("2: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                p2.setTextColor(getResources().getColor(R.color.green));
                 if (c2 >= c1) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.red));
                 }
                 else {
                     p3.setText("3: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.red));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
             else {
                 p2.setText("2: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
+                p2.setTextColor(getResources().getColor(R.color.red));
                 if (c2 >= c3) {
                     p3.setText("3: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.blue));
                     p4.setText("4: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.green));
                 }
                 else {
                     p3.setText("3: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
+                    p3.setTextColor(getResources().getColor(R.color.green));
                     p4.setText("4: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
+                    p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
         }
 
 
+    }
+
+
+    public void btnNxt(View V){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Score.this);
+        builder.setTitle(R.string.attention)
+                .setCancelable(true)
+                .setMessage(R.string.select_move)
+                .setPositiveButton(R.string.next_year, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Data._year += 1;
+                        Data._cubes = true;
+                        Data._move = 1;
+                        while (true) {
+                            try {
+                                Data.save();
+                                Toast.makeText(V.getContext(), "Прогресс сохранён", Toast.LENGTH_SHORT).show();
+                                break;
+                            } catch (Exception e) {
+                                Exception a = e;
+                                Toast.makeText(V.getContext(), "Ошибка сохранения" + e.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.finish, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Data._cubes = true;
+                        Data._move = 1;
+                        Intent intent = new Intent(V.getContext(), Victory.class);
+                        startActivity(intent);
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
