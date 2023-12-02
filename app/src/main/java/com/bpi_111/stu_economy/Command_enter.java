@@ -21,7 +21,7 @@ public class Command_enter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         setContentView(R.layout.activity_command_enter);
         EditText editTexttext = findViewById(R.id.editTextText6);
@@ -39,6 +39,28 @@ public class Command_enter extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         overridePendingTransition(0,0);
+    }
+
+    @Override public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter.this);
+        builder.setTitle(R.string.exitMain)
+                .setMessage(R.string.progressNoSave)
+                .setCancelable(true)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void nextButton(View V){

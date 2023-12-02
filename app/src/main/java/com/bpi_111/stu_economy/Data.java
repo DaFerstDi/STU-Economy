@@ -1,8 +1,14 @@
 package com.bpi_111.stu_economy;
 
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -216,16 +222,22 @@ public class Data {
     }
 
 
-    public static void load(){
+    public static boolean load(){
+        File fl = new File("/data/data/com.bpi_111.stu_economy/files/data");
+        if (!fl.exists()){
+            return false;
+        }
 
         _cubes = true;
 
         String s = "";
 
-        try(FileInputStream fin=new FileInputStream("/data/data/com.bpi_111.stu_economy/files/data"))
+        try(FileInputStream fin=new FileInputStream("/data/data/com.bpi_111.stu_economy/files/data");
+        InputStreamReader isr = new InputStreamReader(fin, StandardCharsets.UTF_8);
+        BufferedReader reader = new BufferedReader(isr))
         {
             int i;
-            while((i=fin.read())!=-1){
+            while((i=reader.read())!=-1){
                 s +=(char)i;
             }
         }
@@ -328,6 +340,8 @@ public class Data {
         _c4.put("les", Integer.parseInt(sp[4].split("&")[19]));
         _c4.put("seed", Integer.parseInt(sp[4].split("&")[20]));
         _c4.put("kont", Integer.parseInt(sp[4].split("&")[21]));
+
+        return true;
     }
 
 
@@ -335,7 +349,7 @@ public class Data {
 
         String text = String.format((Integer) _move + "&" + (Integer) _year + "\n");
 
-        text += String.format((String) _c1.get("name") + "&" +
+        text += String.format((String) _c1.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c1.get("points").toString()) + "&" +
                 (Integer) Integer.parseInt(_c1.get("money").toString()) + "&" +
                 (Integer) Integer.parseInt(_c1.get("vict_p").toString()) + "&" +
@@ -359,7 +373,7 @@ public class Data {
                 (Integer) Integer.parseInt(_c1.get("kont").toString()) +
                 "\n");
 
-        text += String.format((String) _c2.get("name") + "&" +
+        text += String.format((String) _c2.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c2.get("points").toString()) + "&" +
                 (Integer) Integer.parseInt(_c2.get("money").toString()) + "&" +
                 (Integer) Integer.parseInt(_c2.get("vict_p").toString()) + "&" +
@@ -383,7 +397,7 @@ public class Data {
                 (Integer) Integer.parseInt(_c2.get("kont").toString()) +
                 "\n");
 
-        text += String.format((String) _c3.get("name") + "&" +
+        text += String.format((String) _c3.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c3.get("points").toString()) + "&" +
                 (Integer) Integer.parseInt(_c3.get("money").toString()) + "&" +
                 (Integer) Integer.parseInt(_c3.get("vict_p").toString()) + "&" +
@@ -407,7 +421,7 @@ public class Data {
                 (Integer) Integer.parseInt(_c3.get("kont").toString()) +
                 "\n");
 
-        text += String.format((String) _c4.get("name") + "&" +
+        text += String.format((String) _c4.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c4.get("points").toString()) + "&" +
                 (Integer) Integer.parseInt(_c4.get("money").toString()) + "&" +
                 (Integer) Integer.parseInt(_c4.get("vict_p").toString()) + "&" +

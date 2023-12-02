@@ -45,6 +45,28 @@ public class Score extends AppCompatActivity {
         return 0.0;
     }
 
+    @Override public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Score.this);
+        builder.setTitle(R.string.exitMain)
+                .setMessage(R.string.progressNoSave)
+                .setCancelable(true)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 
     @Override
     protected void onResume() {
@@ -485,11 +507,11 @@ public class Score extends AppCompatActivity {
                         while (true) {
                             try {
                                 Data.save();
-                                Toast.makeText(V.getContext(), "Прогресс сохранён", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(V.getContext(), "Прогресс сохранён.", Toast.LENGTH_SHORT).show();
                                 break;
                             } catch (Exception e) {
                                 Exception a = e;
-                                Toast.makeText(V.getContext(), "Ошибка сохранения" + e.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(V.getContext(), "Ошибка сохранения." + e.toString(), Toast.LENGTH_SHORT).show();
                             }
                         }
                         Intent intent = new Intent(V.getContext(), Year_display.class);

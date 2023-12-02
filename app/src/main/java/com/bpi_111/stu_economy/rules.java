@@ -2,6 +2,7 @@ package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.view.View;
@@ -17,6 +18,11 @@ public class rules extends AppCompatActivity {
         webView.loadUrl("file:///android_asset/rules.html");
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setBuiltInZoomControls(true);
+    }
+
+    @Override public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

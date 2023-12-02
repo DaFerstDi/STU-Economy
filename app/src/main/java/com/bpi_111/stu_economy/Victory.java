@@ -17,6 +17,11 @@ public class Victory extends AppCompatActivity {
         setContentView(R.layout.activity_victory);
     }
 
+    @Override public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onResume() {
