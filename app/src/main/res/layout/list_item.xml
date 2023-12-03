@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="Название"
+        android:textColor="@color/text"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/flag"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,9 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="Значение"
-        app:layout_constraintRight_toRightOf="parent"
+        android:textColorHint="@color/text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/flag"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

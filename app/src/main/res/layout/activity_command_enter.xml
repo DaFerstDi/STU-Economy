@@ -40,6 +40,7 @@
         android:layout_marginTop="450dp"
         android:onClick="nextButton"
         android:text="@string/next"
+        android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,6 +52,7 @@
         android:alpha="0"
         android:onClick="previousButton"
         android:text="@string/back"
+        android:textColor="@color/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

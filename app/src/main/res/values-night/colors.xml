@@ -2,9 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg">#F5DEB3</color>
-    <color name="btn">#DEB887</color>
-    <color name="text">#696969</color>
+    <color name="bg">#4d4d4d</color>
+    <color name="btn">#787878</color>
+    <color name="text">#ebebeb</color>
+
+    <!--<color name="bg">#C71585</color>
+    <color name="btn">#FF1493</color>
+    <color name="text">#FFFFFF</color>
+    -->
     <color name="red">#FF0000</color>
     <color name="lightRed">#ff6464</color>
     <color name="blue">#0000FF</color>
@@ -13,5 +18,4 @@
     <color name="lightGreen">#648064</color>
     <color name="yellow">#FFFF00</color>
     <color name="lightYellow">#c8c800</color>
-    <color name="transparent">#00000000 </color>
 </resources>

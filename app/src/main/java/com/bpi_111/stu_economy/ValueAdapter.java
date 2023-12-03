@@ -46,8 +46,8 @@ public class ValueAdapter extends RecyclerView.Adapter<ValueAdapter.ViewHolder>{
         holder.flagView.setImageResource(values.getIconImage());
         holder.nameView.setText(values.getName());
         holder.capitalView.setText(values.getValue());
-        holder.nameView.setTextColor(R.color.text);
-        holder.capitalView.setTextColor(R.color.text);
+        //holder.nameView.setTextColor();
+        //holder.capitalView.setTextColor(R.color.text);
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
