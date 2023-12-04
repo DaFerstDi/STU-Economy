@@ -1,6 +1,7 @@
 package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 
 public class Settings extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class Settings extends AppCompatActivity {
         super.onResume();
         overridePendingTransition(0, 0);
         CheckBox cb = findViewById(R.id.checkBox);
-        cb.setChecked(Data._new_comm_inp == 1);
+        cb.setChecked(Data._dark_theme == 1);
 
 
 
@@ -36,10 +38,14 @@ public class Settings extends AppCompatActivity {
     public void onClickCk1(View v) {
         CheckBox cb = findViewById(R.id.checkBox);
         if (cb.isChecked()){
-            Data._new_comm_inp = 1;
+            Data._dark_theme = 1;
+            Data.saveSett();
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{
-            Data._new_comm_inp = 0;
+            Data._dark_theme = 0;
+            Data.saveSett();
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
     }
 }

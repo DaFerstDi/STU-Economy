@@ -26,6 +26,7 @@ public class Data {
     public static int _move = 1; // Не сохраняется
     public static int _leader = 0;
     public static int _new_comm_inp = 1;
+    public static int _dark_theme = 0;
 
     static {
         _c1.put("name", "");
@@ -246,6 +247,7 @@ public class Data {
         }
 
         String[] sp = s.split("\n");
+        //_dark_theme = Integer.parseInt(sp[0].split("&")[0]);
         _move = Integer.parseInt(sp[0].split("&")[0]);
         _year = Integer.parseInt(sp[0].split("&")[1]);
 
@@ -344,10 +346,48 @@ public class Data {
         return true;
     }
 
+    public static boolean loadSett() {
+        File fl = new File("/data/data/com.bpi_111.stu_economy/files/settings");
+        if (!fl.exists()) {
+            return false;
+        }
 
+        String s = "";
+
+        try (FileInputStream fin = new FileInputStream("/data/data/com.bpi_111.stu_economy/files/settings");
+             InputStreamReader isr = new InputStreamReader(fin, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(isr)) {
+            int i;
+            while ((i = reader.read()) != -1) {
+                s += (char) i;
+            }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        String[] sp = s.split("\n");
+        _dark_theme = Integer.parseInt(sp[0].split("&")[0]);
+        return true;
+    }
+
+    public static void saveSett(){
+        String text = String.format((Integer) _dark_theme + "&");
+
+        try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/files/settings"))
+        {
+            byte[] buffer = text.getBytes();
+
+            fos.write(buffer, 0, buffer.length);
+        }
+        catch(IOException ex){
+
+            System.out.println(ex.getMessage());
+        }
+    }
     public static void save(){
 
-        String text = String.format((Integer) _move + "&" + (Integer) _year + "\n");
+        String text = String.format((Integer) _move + "&" +
+                (Integer) _year + "\n");
 
         text += String.format((String) _c1.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c1.get("points").toString()) + "&" +

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Command_enter extends AppCompatActivity {
 
@@ -71,73 +72,85 @@ public class Command_enter extends AppCompatActivity {
 
         switch (cmd){
             case (1):{
-                iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
-                Data._c1.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c2.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_2));
-                textView.setTextColor(getResources().getColor(R.color.blue));
-                editTexttext.setTextColor(getResources().getColor(R.color.blue));
-                editTexttext.setHintTextColor(getColor(R.color.lightBlue));
-                btn.setAlpha(1);
-                cmd = 2;
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
+                    Data._c1.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c2.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_2));
+                    textView.setTextColor(getResources().getColor(R.color.blue));
+                    editTexttext.setTextColor(getResources().getColor(R.color.blue));
+                    editTexttext.setHintTextColor(getColor(R.color.lightBlue));
+                    btn.setAlpha(1);
+                    cmd = 2;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (2):{
-                iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
-                Data._c2.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c3.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_3));
-                textView.setTextColor(getResources().getColor(R.color.green));
-                editTexttext.setTextColor(getResources().getColor(R.color.green));
-                editTexttext.setHintTextColor(getColor(R.color.lightGreen));
-                btn.setAlpha(1);
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
+                    Data._c2.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c3.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_3));
+                    textView.setTextColor(getResources().getColor(R.color.green));
+                    editTexttext.setTextColor(getResources().getColor(R.color.green));
+                    editTexttext.setHintTextColor(getColor(R.color.lightGreen));
+                    btn.setAlpha(1);
                 cmd = 3;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (3):{
-                iv.setColorFilter(new LightingColorFilter(Color.YELLOW, Color.YELLOW));
-                Data._c3.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c4.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_4));
-                textView.setTextColor(getResources().getColor(R.color.yellow));
-                editTexttext.setTextColor(getResources().getColor(R.color.yellow));
-                editTexttext.setHintTextColor(getColor(R.color.lightYellow));
-                btn.setAlpha(1);
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.YELLOW, Color.YELLOW));
+                    Data._c3.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c4.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_4));
+                    textView.setTextColor(getResources().getColor(R.color.yellow));
+                    editTexttext.setTextColor(getResources().getColor(R.color.yellow));
+                    editTexttext.setHintTextColor(getColor(R.color.lightYellow));
+                    btn.setAlpha(1);
                 cmd = 4;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (4):{
-                Data._c4.put("name", editTexttext.getText());
-                AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter.this);
-                builder.setTitle(R.string.start_ask)
-                        .setCancelable(true)
-                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                if (Data._c1.get("name").toString().equals("")){
-                                    Data._c1.put("name", "Первая");
+                if (!editTexttext.getText().toString().contains("&")) {
+                    Data._c4.put("name", editTexttext.getText());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter.this);
+                    builder.setTitle(R.string.start_ask)
+                            .setCancelable(true)
+                            .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    if (Data._c1.get("name").toString().equals("")){
+                                        Data._c1.put("name", "Первая");
+                                    }
+                                    if (Data._c2.get("name").toString().equals("")){
+                                        Data._c2.put("name", "Вторая");
+                                    }
+                                    if (Data._c3.get("name").toString().equals("")){
+                                        Data._c3.put("name", "Третья");
+                                    }
+                                    if (Data._c4.get("name").toString().equals("")){
+                                        Data._c4.put("name", "Четвёртая");
+                                    }
+                                    Intent intent = new Intent(V.getContext(), Year_display.class);
+                                    startActivity(intent);
                                 }
-                                if (Data._c2.get("name").toString().equals("")){
-                                    Data._c2.put("name", "Вторая");
+                            })
+                            .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
                                 }
-                                if (Data._c3.get("name").toString().equals("")){
-                                    Data._c3.put("name", "Третья");
-                                }
-                                if (Data._c4.get("name").toString().equals("")){
-                                    Data._c4.put("name", "Четвёртая");
-                                }
-                                Intent intent = new Intent(V.getContext(), Year_display.class);
-                                startActivity(intent);
-                            }
-                        })
-                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
-                            }
-                        });
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                            });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
@@ -153,39 +166,48 @@ public class Command_enter extends AppCompatActivity {
 
         switch (cmd) {
             case (2): {
-                iv.setColorFilter(new LightingColorFilter(Color.RED, Color.RED));
-                Data._c2.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c1.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_1));
-                textView.setTextColor(getResources().getColor(R.color.red));
-                editTexttext.setTextColor(getResources().getColor(R.color.red));
-                editTexttext.setHintTextColor(getColor(R.color.lightRed));
-                btn.setAlpha(0);
-                cmd = 1;
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.RED, Color.RED));
+                    Data._c2.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c1.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_1));
+                    textView.setTextColor(getResources().getColor(R.color.red));
+                    editTexttext.setTextColor(getResources().getColor(R.color.red));
+                    editTexttext.setHintTextColor(getColor(R.color.lightRed));
+                    btn.setAlpha(0);
+                    cmd = 1;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (3): {
-                iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
-                Data._c3.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c2.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_2));
-                textView.setTextColor(getResources().getColor(R.color.blue));
-                editTexttext.setTextColor(getResources().getColor(R.color.blue));
-                editTexttext.setHintTextColor(getColor(R.color.lightBlue));
-                btn.setAlpha(1);
-                cmd = 2;
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
+                    Data._c3.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c2.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_2));
+                    textView.setTextColor(getResources().getColor(R.color.blue));
+                    editTexttext.setTextColor(getResources().getColor(R.color.blue));
+                    editTexttext.setHintTextColor(getColor(R.color.lightBlue));
+                    btn.setAlpha(1);
+                    cmd = 2;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (4): {
-                iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
-                Data._c4.put("name", editTexttext.getText());
-                editTexttext.setText(Data._c3.get("name").toString());
-                textView.setText(getResources().getText(R.string.command_3));
-                textView.setTextColor(getResources().getColor(R.color.green));
-                editTexttext.setTextColor(getResources().getColor(R.color.green));
-                editTexttext.setHintTextColor(getColor(R.color.lightGreen));
-                btn.setAlpha(1);
-                cmd = 3;
+                if (!editTexttext.getText().toString().contains("&")) {
+                    iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
+                    Data._c4.put("name", editTexttext.getText());
+                    editTexttext.setText(Data._c3.get("name").toString());
+                    textView.setText(getResources().getText(R.string.command_3));
+                    textView.setTextColor(getResources().getColor(R.color.green));
+                    editTexttext.setTextColor(getResources().getColor(R.color.green));
+                    editTexttext.setHintTextColor(getColor(R.color.lightGreen));
+                    btn.setAlpha(1);
+                    cmd = 3;
+                }
+                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
