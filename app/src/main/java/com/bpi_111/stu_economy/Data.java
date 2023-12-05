@@ -22,7 +22,7 @@ public class Data {
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static int _year = 1;
     public static boolean _cubes = true;
-    public static int _easter = -666666; // Исходное -4
+    public static int _easter = -666; // Исходное -4
     public static int _move = 1; // Не сохраняется
     public static int _leader = 0;
     public static int _new_comm_inp = 1;
