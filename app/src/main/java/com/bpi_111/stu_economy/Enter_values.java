@@ -159,6 +159,12 @@ public class Enter_values extends AppCompatActivity {
                 alert.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         String value = input.getText().toString();
+                        char[] vc = value.toCharArray();
+                        for (char c : vc) {
+                            if (c == '0') {
+                                value = value.replaceFirst("0", "");
+                            } else break;
+                        }
                         if (value.equals("")){
                             value = "0";
                         }

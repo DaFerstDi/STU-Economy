@@ -137,6 +137,7 @@ public class Command_enter extends AppCompatActivity {
                                     if (Data._c4.get("name").toString().equals("")){
                                         Data._c4.put("name", "Четвёртая");
                                     }
+                                    Data._cubes = true;
                                     Intent intent = new Intent(V.getContext(), Year_display.class);
                                     startActivity(intent);
                                 }

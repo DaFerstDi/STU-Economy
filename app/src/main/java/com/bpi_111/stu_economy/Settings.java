@@ -10,6 +10,7 @@ import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
 
@@ -30,7 +31,9 @@ public class Settings extends AppCompatActivity {
         super.onResume();
         overridePendingTransition(0, 0);
         CheckBox cb = findViewById(R.id.checkBox);
+        CheckBox cb2 = findViewById(R.id.checkBox2);
         cb.setChecked(Data._dark_theme == 1);
+        cb2.setChecked(Data._simple_mode == 1);
 
 
 
@@ -47,6 +50,24 @@ public class Settings extends AppCompatActivity {
             Data.saveSett();
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+
+    }
+
+
+    public void onClickCk2(View v) {
+
+        CheckBox cb2 = findViewById(R.id.checkBox2);
+        if (cb2.isChecked()){
+            Data._simple_mode = 1;
+            Data.saveSett();
+            Toast.makeText(this, "Подсчёт очков отключен.\nПрогресс не сохраняется.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Data._simple_mode = 0;
+            Data.saveSett();
+            Toast.makeText(this, "Подсчёт очков включен.\nПрогресс сохраняется.", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
 

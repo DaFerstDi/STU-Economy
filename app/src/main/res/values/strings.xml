@@ -48,4 +48,5 @@
     <string name="exit">Выход</string>
     <string name="exitMain">Выйти в главное меню?</string>
     <string name="progressNoSave">Прогресс этого года сохранён не будет</string>
+    <string name="simpleMode">Простой режим игры</string>
 </resources>
