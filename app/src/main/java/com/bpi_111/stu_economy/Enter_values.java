@@ -260,7 +260,7 @@ public class Enter_values extends AppCompatActivity {
             switch (s){
                 case ("money"):{
                     j = "Деньги";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.money));
                     break;}
                 case ("vict_p"):{
                     j = "Победные очки";
@@ -303,7 +303,7 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("kam_ug"):{
                     j = "Каменный уголь";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.kam_ug));
                     break;
                 }
                 case ("koks"):{
@@ -333,7 +333,7 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("him_soda"):{
                     j = "Химикаты и сода";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.zhiza));
                     break;
                 }
                 case ("cement"):{
@@ -343,7 +343,7 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("les"):{
                     j = "Лесные грузы";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.bobir));
                     break;
                 }
                 case ("seed"):{
