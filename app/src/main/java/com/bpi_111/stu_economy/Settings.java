@@ -41,14 +41,16 @@ public class Settings extends AppCompatActivity {
     public void onClickCk1(View v) {
         CheckBox cb = findViewById(R.id.checkBox);
         if (cb.isChecked()){
-            Data._dark_theme = 1;
-            Data.saveSett();
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            //Data._dark_theme = 1;
+            //Data.saveSett();
+            Toast.makeText(this, "Coming soon.", Toast.LENGTH_SHORT).show();
+            //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{
-            Data._dark_theme = 0;
-            Data.saveSett();
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            //Data._dark_theme = 0;
+            //Data.saveSett();
+            Toast.makeText(this, "Coming soon.", Toast.LENGTH_SHORT).show();
+            //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
     }
