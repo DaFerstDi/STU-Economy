@@ -1,15 +1,11 @@
 package com.bpi_111.stu_economy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.CheckBox;
-import android.widget.ProgressBar;
-import android.widget.Switch;
 import android.widget.Toast;
 
 public class Settings extends AppCompatActivity {
@@ -44,12 +40,14 @@ public class Settings extends AppCompatActivity {
             //Data._dark_theme = 1;
             //Data.saveSett();
             Toast.makeText(this, "Coming soon.", Toast.LENGTH_SHORT).show();
+            cb.setChecked(false);
             //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
         else{
             //Data._dark_theme = 0;
             //Data.saveSett();
             Toast.makeText(this, "Coming soon.", Toast.LENGTH_SHORT).show();
+            cb.setChecked(false);
             //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
