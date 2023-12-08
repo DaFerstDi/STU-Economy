@@ -8,9 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static boolean egigi = false;
 
 
     @Override
@@ -35,25 +39,93 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPlayActivity(View v){
+        if (egigi) {
+            Button bt = findViewById(R.id.button);
+            Random rnd = new Random();
+            int width = 1080 - 100;  // deprecated
+            int height = 2340 - 100;  // deprecated
+            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
+                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            while (posX > width || posY > height) {
+                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
+                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            }
+            bt.setX(posX);
+            bt.setY(posY);
+        }
+        else {
             Intent intent = new Intent(this, activity_game.class);
             startActivity(intent);
+        }
     }
     public void goRulesActivity(View v) {
-        Intent intent = new Intent(this, rules.class);
-        startActivity(intent);
+        if (egigi) {
+            Button bt = findViewById(R.id.button2);
+            Random rnd = new Random();
+            int width = 1080 - 100;  // deprecated
+            int height = 2340 - 100;  // deprecated
+            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
+                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            while ((posX > width || posY > height) || (posX < -width || posY < -height)) {
+                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
+                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            }
+            bt.setX(posX);
+            bt.setY(posY);
+        }
+        else {
+            Intent intent = new Intent(this, rules.class);
+            startActivity(intent);
+        }
     }
 
     public void goAboutActivity(View v) {
-        Intent intent = new Intent(this, About.class);
-        startActivity(intent);
+        if (egigi) {
+            Button bt = findViewById(R.id.button4);
+            Random rnd = new Random();
+            int width = 1080 - 100;  // deprecated
+            int height = 2340 - 100;  // deprecated
+            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
+                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            while (posX > width || posY > height) {
+                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
+                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            }
+            bt.setX(posX);
+            bt.setY(posY);
+        }
+        else {
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+        }
     }
 
     public void goSettingsActivity(View v) {
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
+        if (egigi) {
+            Button bt = findViewById(R.id.button3);
+            Random rnd = new Random();
+            int width = 1080 - 100;  // deprecated
+            int height = 2340 - 100;  // deprecated
+            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
+                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            while (posX > width || posY > height) {
+                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
+                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
+            }
+            bt.setX(posX);
+            bt.setY(posY);
+        }
+        else {
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+        }
     }
 
     @Override public void onBackPressed() {
+        egigi = !egigi;
+        Intent i = new Intent( this , this.getClass() );
+        finish();
+        this.startActivity(i);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.exit_ask)
                 .setCancelable(true)

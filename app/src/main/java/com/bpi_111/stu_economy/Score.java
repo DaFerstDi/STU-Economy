@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Score extends AppCompatActivity {
-    int c1, c2, c3, c4;
+    long c1, c2, c3, c4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +72,10 @@ public class Score extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
-        c1=Integer.parseInt(Data._c1.get("money").toString());
-        c2=Integer.parseInt(Data._c2.get("money").toString());
-        c3=Integer.parseInt(Data._c3.get("money").toString());
-        c4=Integer.parseInt(Data._c4.get("money").toString());
+        c1=Long.parseLong(Data._c1.get("money").toString());
+        c2=Long.parseLong(Data._c2.get("money").toString());
+        c3=Long.parseLong(Data._c3.get("money").toString());
+        c4=Long.parseLong(Data._c4.get("money").toString());
 
         TextView p1 = findViewById(R.id.p1_score);
         TextView p2 = findViewById(R.id.p2_score);
@@ -304,7 +304,7 @@ public class Score extends AppCompatActivity {
                     p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
-            else {
+            else if (c4 >= c2 && c4 >= c3){
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
                 p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c2 >= c3) {
@@ -358,7 +358,7 @@ public class Score extends AppCompatActivity {
                     p4.setTextColor(getResources().getColor(R.color.red));
                 }
             }
-            else {
+            else if (c4 >= c1 && c4 >= c3){
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
                 p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c1 >= c3) {
@@ -380,7 +380,7 @@ public class Score extends AppCompatActivity {
             p1.setText("1: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
             p1.setTextColor(getResources().getColor(R.color.green));
             Data._leader = 3;
-            if (c2>=c3 && c2>=c4){
+            if (c2>=c1 && c2>=c4){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
                 p2.setTextColor(getResources().getColor(R.color.blue));
                 if (c1 >= c4) {
@@ -412,7 +412,7 @@ public class Score extends AppCompatActivity {
                     p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
-            else {
+            else if (c4 >= c2 && c4 >= c1){
                 p2.setText("2: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
                 p2.setTextColor(getResources().getColor(R.color.yellow));
                 if (c2 >= c1) {
@@ -466,7 +466,7 @@ public class Score extends AppCompatActivity {
                     p4.setTextColor(getResources().getColor(R.color.blue));
                 }
             }
-            else {
+            else if (c1 >= c2 && c1 >= c3){
                 p2.setText("2: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
                 p2.setTextColor(getResources().getColor(R.color.red));
                 if (c2 >= c3) {

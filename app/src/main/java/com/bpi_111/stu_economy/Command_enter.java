@@ -72,7 +72,7 @@ public class Command_enter extends AppCompatActivity {
 
         switch (cmd){
             case (1):{
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
                     Data._c1.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c2.get("name").toString());
@@ -83,11 +83,11 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(1);
                     cmd = 2;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (2):{
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
                     Data._c2.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c3.get("name").toString());
@@ -98,11 +98,11 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(1);
                 cmd = 3;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (3):{
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.YELLOW, Color.YELLOW));
                     Data._c3.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c4.get("name").toString());
@@ -113,11 +113,11 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(1);
                 cmd = 4;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (4):{
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     Data._c4.put("name", editTexttext.getText());
                     AlertDialog.Builder builder = new AlertDialog.Builder(Command_enter.this);
                     builder.setTitle(R.string.start_ask)
@@ -151,7 +151,7 @@ public class Command_enter extends AppCompatActivity {
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
@@ -167,7 +167,7 @@ public class Command_enter extends AppCompatActivity {
 
         switch (cmd) {
             case (2): {
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.RED, Color.RED));
                     Data._c2.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c1.get("name").toString());
@@ -178,11 +178,11 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(0);
                     cmd = 1;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (3): {
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.BLUE, Color.BLUE));
                     Data._c3.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c2.get("name").toString());
@@ -193,11 +193,11 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(1);
                     cmd = 2;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
             case (4): {
-                if (!editTexttext.getText().toString().contains("&")) {
+                if (validate(editTexttext.getText().toString())) {
                     iv.setColorFilter(new LightingColorFilter(Color.GREEN, Color.GREEN));
                     Data._c4.put("name", editTexttext.getText());
                     editTexttext.setText(Data._c3.get("name").toString());
@@ -208,9 +208,22 @@ public class Command_enter extends AppCompatActivity {
                     btn.setAlpha(1);
                     cmd = 3;
                 }
-                else Toast.makeText(V.getContext(), "Недопустимый символ (&)", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(V.getContext(), "Недопустимый символ.", Toast.LENGTH_SHORT).show();
                 break;
             }
         }
+    }
+
+    private boolean validate(String s){
+        String tru = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя1234567890_-!?+, ";
+        //char[] tru = tr.toCharArray();
+        boolean fl = true;
+        for (char c:s.toCharArray()) {
+            if (tru.indexOf(c) == -1) {
+                fl = false;
+                break;
+            }
+        }
+        return fl;
     }
 }
