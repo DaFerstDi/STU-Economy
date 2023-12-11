@@ -288,17 +288,17 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("ports_okt"):{
                     j = "Порты Октябрьской ж.д.";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.ports_okt));
                     break;
                 }
                 case ("ports_sk"):{
                     j = "Порты Северо-Кавказской ж.д.";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.ports_sk));
                     break;
                 }
                 case ("ports_dv"):{
                     j = "Порты Дальневосточной ж.д.";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.ports_dv));
                     break;
                 }
                 case ("kam_ug"):{
@@ -338,7 +338,7 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("cement"):{
                     j = "Цемент";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.cement));
                     break;
                 }
                 case ("les"):{
@@ -348,12 +348,12 @@ public class Enter_values extends AppCompatActivity {
                 }
                 case ("seed"):{
                     j = "Зерно";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.seed));
                     break;
                 }
                 case ("kont"):{
                     j = "Грузы в контейнерах";
-                    values.add(new Values(j, vl, R.drawable.stu));
+                    values.add(new Values(j, vl, R.drawable.kont));
                     break;}
             }
         }
