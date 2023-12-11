@@ -26,15 +26,15 @@ public class Settings extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         overridePendingTransition(0, 0);
-        CheckBox cb = findViewById(R.id.checkBox);
+        //CheckBox cb = findViewById(R.id.checkBox);
         CheckBox cb2 = findViewById(R.id.checkBox2);
-        cb.setChecked(Data._dark_theme == 1);
+        //cb.setChecked(Data._dark_theme == 1);
         cb2.setChecked(Data._simple_mode == 1);
 
 
 
     }
-    public void onClickCk1(View v) {
+    public void onClickCk1(View v){ /*
         CheckBox cb = findViewById(R.id.checkBox);
         if (cb.isChecked()){
             //Data._dark_theme = 1;
@@ -49,7 +49,7 @@ public class Settings extends AppCompatActivity {
             Toast.makeText(this, "Coming soon.", Toast.LENGTH_SHORT).show();
             cb.setChecked(false);
             //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
+        }*/
 
     }
 

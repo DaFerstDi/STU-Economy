@@ -1,7 +1,7 @@
 <resources>
     <!--<string name=""></string>-->
     <string name="app_name">RSM</string>
-    <string name="app_version">0.47</string>
+    <string name="app_version">1.47</string>
     <string name="name">RSM</string>
     <string name="newgame">Новая игра</string>
     <string name="continuegame">Продолжить игру</string>
@@ -13,7 +13,8 @@
     <string name="main_rules">Правила</string>
     <string name="main_settings">Настройки</string>
     <string name="main_about">О приложении</string>
-    <string name="about">Разработчики не несут ничего</string>
+    <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича
+    </string>
     <string name="TRAIN">Это поезд</string>
     <string name="command_1">Команда 1</string>
     <string name="command_2">Команда 2</string>

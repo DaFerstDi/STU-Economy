@@ -28,12 +28,4 @@ public class About extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-
-    public void imageClickAbout(View v){
-        if (Data._easter == -666){
-            //Data._easter = -96;
-            Intent intent = new Intent(this, Easter.class);
-            startActivity(intent);
-        }
-    }
 }
