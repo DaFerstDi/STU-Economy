@@ -41,10 +41,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Easter"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Year_display"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -58,10 +54,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".About"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Command_enter3"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

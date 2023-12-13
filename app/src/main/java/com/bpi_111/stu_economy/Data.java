@@ -22,7 +22,6 @@ public class Data {
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static int _year = 1;
     public static boolean _cubes = true;
-    public static int _easter = -666; // Исходное -4
     public static int _move = 1; // Не сохраняется
     public static int _leader = 0;
     public static int _new_comm_inp = 1;
@@ -226,7 +225,7 @@ public class Data {
 
 
     public static boolean load(){
-        File fl = new File("/data/data/com.bpi_111.stu_economy/files/data");
+        File fl = new File("/data/data/com.bpi_111.stu_economy/data");
         if (!fl.exists()){
             return false;
         }
@@ -235,7 +234,7 @@ public class Data {
 
         String s = "";
 
-        try(FileInputStream fin=new FileInputStream("/data/data/com.bpi_111.stu_economy/files/data");
+        try(FileInputStream fin=new FileInputStream("/data/data/com.bpi_111.stu_economy/data");
         InputStreamReader isr = new InputStreamReader(fin, StandardCharsets.UTF_8);
         BufferedReader reader = new BufferedReader(isr))
         {
@@ -350,14 +349,14 @@ public class Data {
     }
 
     public static boolean loadSett() {
-        File fl = new File("/data/data/com.bpi_111.stu_economy/files/settings");
+        File fl = new File("/data/data/com.bpi_111.stu_economy/settings");
         if (!fl.exists()) {
             return false;
         }
 
         String s = "";
 
-        try (FileInputStream fin = new FileInputStream("/data/data/com.bpi_111.stu_economy/files/settings");
+        try (FileInputStream fin = new FileInputStream("/data/data/com.bpi_111.stu_economy/settings");
              InputStreamReader isr = new InputStreamReader(fin, StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(isr)) {
             int i;
@@ -382,7 +381,7 @@ public class Data {
     public static void saveSett(){
         String text = String.format((Integer) _dark_theme + "&" + (Integer) _simple_mode + "&");
 
-        try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/files/settings"))
+        try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/settings"))
         {
             byte[] buffer = text.getBytes();
 
@@ -495,7 +494,7 @@ public class Data {
                 (Integer) Integer.parseInt(_c4.get("kont").toString()) +
                 "\n");
 
-        try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/files/data"))
+        try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/data"))
         {
             byte[] buffer = text.getBytes();
 

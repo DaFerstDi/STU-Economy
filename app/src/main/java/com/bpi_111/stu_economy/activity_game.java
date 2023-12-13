@@ -25,7 +25,6 @@ public class activity_game extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         overridePendingTransition(0,0);
-        Data._easter = -4;
     }
 
     @Override public void onBackPressed() {
@@ -38,16 +37,9 @@ public class activity_game extends AppCompatActivity {
         startActivity(intent);
     }
     public void goCommandEnterActivity(View v) {
-        if (Data._new_comm_inp == 1){
-            Data.setDefault();
-            Intent intent = new Intent(this, Command_enter.class);
-            startActivity(intent);
-        }
-        else{
-            Intent intent = new Intent(this, Command_enter3.class);
-            startActivity(intent);
-        }
-
+        Data.setDefault();
+        Intent intent = new Intent(this, Command_enter.class);
+        startActivity(intent);
     }
 
     public void goReturnGame(View v) {
@@ -62,12 +54,9 @@ public class activity_game extends AppCompatActivity {
 
         }
         else {
-            Toast.makeText(this, "Ошибка загрузки. Начните новую игру", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ошибка загрузки. Начните новую игру.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void imageClickGame(View v){
-        Data._easter += 1;
-    }
 
 }

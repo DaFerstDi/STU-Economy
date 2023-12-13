@@ -14,9 +14,6 @@ import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static boolean egigi = false;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,93 +36,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPlayActivity(View v){
-        if (egigi) {
-            Button bt = findViewById(R.id.button);
-            Random rnd = new Random();
-            int width = 1080 - 100;  // deprecated
-            int height = 2340 - 100;  // deprecated
-            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
-                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            while (posX > width || posY > height) {
-                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
-                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            }
-            bt.setX(posX);
-            bt.setY(posY);
-        }
-        else {
             Intent intent = new Intent(this, activity_game.class);
             startActivity(intent);
-        }
     }
     public void goRulesActivity(View v) {
-        if (egigi) {
-            Button bt = findViewById(R.id.button2);
-            Random rnd = new Random();
-            int width = 1080 - 100;  // deprecated
-            int height = 2340 - 100;  // deprecated
-            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
-                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            while ((posX > width || posY > height) || (posX < -width || posY < -height)) {
-                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
-                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            }
-            bt.setX(posX);
-            bt.setY(posY);
-        }
-        else {
             Intent intent = new Intent(this, rules.class);
             startActivity(intent);
-        }
     }
 
     public void goAboutActivity(View v) {
-        if (egigi) {
-            Button bt = findViewById(R.id.button4);
-            Random rnd = new Random();
-            int width = 1080 - 100;  // deprecated
-            int height = 2340 - 100;  // deprecated
-            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
-                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            while (posX > width || posY > height) {
-                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
-                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            }
-            bt.setX(posX);
-            bt.setY(posY);
-        }
-        else {
             Intent intent = new Intent(this, About.class);
             startActivity(intent);
-        }
     }
 
     public void goSettingsActivity(View v) {
-        if (egigi) {
-            Button bt = findViewById(R.id.button3);
-            Random rnd = new Random();
-            int width = 1080 - 100;  // deprecated
-            int height = 2340 - 100;  // deprecated
-            float posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000),
-                    posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            while (posX > width || posY > height) {
-                posX = bt.getX() + rnd.nextInt(1000) - rnd.nextInt(1000);
-                posY = bt.getY() + rnd.nextInt(1000) - rnd.nextInt(1000);
-            }
-            bt.setX(posX);
-            bt.setY(posY);
-        }
-        else {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
-        }
     }
 
     @Override public void onBackPressed() {
-        egigi = !egigi;
-        Intent i = new Intent( this , this.getClass() );
-        finish();
-        this.startActivity(i);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.exit_ask)
                 .setCancelable(true)
@@ -135,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                     }
                 })
-                .setNegativeButton(R.string.TRAIN, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
@@ -143,11 +72,5 @@ public class MainActivity extends AppCompatActivity {
                 });
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
-
-    public void imageClickMain(View v){
-        if (Data._easter == 4){
-            Data._easter = -666;
-        }
     }
 }

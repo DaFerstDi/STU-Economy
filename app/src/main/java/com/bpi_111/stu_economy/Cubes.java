@@ -60,11 +60,6 @@ public class Cubes extends AppCompatActivity {
         bt.setText("");
         rt.setText("");
 
-        String t1 = Data._c1.get("name").toString();
-        String t2 = Data._c2.get("name").toString();
-        String t3 = Data._c3.get("name").toString();
-        String t4 = Data._c4.get("name").toString();
-
         if (Data._move == 1) {
             cn.setText("Команда:\n" + Data._c1.get("name").toString());
         }
