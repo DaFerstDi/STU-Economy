@@ -52,8 +52,14 @@ public class activity_game extends AppCompatActivity {
 
     public void goReturnGame(View v) {
         if (Data.load()){
-            Intent intent = new Intent(this, Year_display.class);
-            startActivity(intent);
+            if (Data._end == 0){
+                Intent intent = new Intent(this, Year_display.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "Пожалуйста, начните новую игру.", Toast.LENGTH_SHORT).show();
+            }
+
         }
         else {
             Toast.makeText(this, "Ошибка загрузки. Начните новую игру", Toast.LENGTH_SHORT).show();

@@ -28,6 +28,7 @@ public class Data {
     public static int _new_comm_inp = 1;
     public static int _dark_theme = 0;
     public static int _simple_mode = 0;
+    public static int _end = 0;
 
     static {
         _c1.put("name", "");
@@ -251,6 +252,7 @@ public class Data {
         //_dark_theme = Integer.parseInt(sp[0].split("&")[0]);
         _move = Integer.parseInt(sp[0].split("&")[0]);
         _year = Integer.parseInt(sp[0].split("&")[1]);
+        _end = Integer.parseInt(sp[0].split("&")[2]);
 
         _c1.put("name", sp[1].split("&")[0].toString());
         _c1.put("points", Integer.parseInt(sp[1].split("&")[1]));
@@ -394,7 +396,8 @@ public class Data {
     public static void save(){
 
         String text = String.format((Integer) _move + "&" +
-                (Integer) _year + "\n");
+                (Integer) _year + "&" +
+                (Integer) _end + "\n");
 
         text += String.format((String) _c1.get("name").toString() + "&" +
                 (Integer) Integer.parseInt(_c1.get("points").toString()) + "&" +

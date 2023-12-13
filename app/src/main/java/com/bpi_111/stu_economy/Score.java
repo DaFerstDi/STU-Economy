@@ -497,6 +497,7 @@ public class Score extends AppCompatActivity {
                 .setPositiveButton(R.string.next_year, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        Data._end = 0;
                         Data._year += 1;
                         Data._cubes = true;
                         Data._move = 1;

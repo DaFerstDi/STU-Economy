@@ -45,6 +45,7 @@
     <string name="next_year">Следующий год</string>
     <string name="finish">Закончить игру</string>
     <string name="congratulations">Поздравляем!</string>
+    <string name="command_win">Победила команда</string>
     <string name="exit">Выход</string>
     <string name="exitMain">Выйти в главное меню?</string>
     <string name="progressNoSave">Прогресс этого года сохранён не будет</string>

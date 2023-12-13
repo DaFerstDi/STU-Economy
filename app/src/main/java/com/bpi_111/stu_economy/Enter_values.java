@@ -201,6 +201,10 @@ public class Enter_values extends AppCompatActivity {
                             case ("Зерно"):{nm = "seed"; break;}
                             case ("Грузы в контейнерах"):{nm = "kont"; break;}
                         }
+                        if (nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr")){
+                            int v = Integer.parseInt(value);
+                            if (v % 10 != 0) return;
+                        }
                         if (Data._move == 1) {
                             Data._c1.put(nm, value);
                         }

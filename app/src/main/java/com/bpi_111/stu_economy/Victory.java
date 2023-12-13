@@ -30,6 +30,9 @@ public class Victory extends AppCompatActivity {
         TextView tv = findViewById(R.id.textView11);
         tv.setAlpha(0);
 
+        Data._end = 1;
+        Data.save();
+
         if (Data._leader == 1){
             tv.setText(Data._c1.get("name").toString());
             tv.setTextColor(getResources().getColor(R.color.red));
