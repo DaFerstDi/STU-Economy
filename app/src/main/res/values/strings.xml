@@ -13,7 +13,7 @@
     <string name="main_rules">Правила</string>
     <string name="main_settings">Настройки</string>
     <string name="main_about">О приложении</string>
-    <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича
+    <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича\n\nСоздатели игры:\nКорнеев Максим Владимирович\nЧистяков Александр Сергеевич
     </string>
     <string name="TRAIN">Это поезд</string>
     <string name="command_1">Команда 1</string>
@@ -46,7 +46,7 @@
     <string name="next_year">Следующий год</string>
     <string name="finish">Закончить игру</string>
     <string name="congratulations">Поздравляем!</string>
-    <string name="command_win">Победила команда</string>
+    <string name="command_win">Победа у</string>
     <string name="exit">Выход</string>
     <string name="exitMain">Выйти в главное меню?</string>
     <string name="progressNoSave">Прогресс этого года сохранён не будет</string>

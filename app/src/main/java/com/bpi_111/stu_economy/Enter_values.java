@@ -1,26 +1,22 @@
 package com.bpi_111.stu_economy;
 
-import static android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 
 public class Enter_values extends AppCompatActivity {
@@ -47,11 +43,60 @@ public class Enter_values extends AppCompatActivity {
             "kont"
     };
 
+    private final String[] keysP = new String[] {
+            "ports_okt",
+            "ports_sk",
+            "ports_dv",
+            "kam_ug",
+            "koks",
+            "oil",
+            "iron",
+            "bl_met",
+            "str_gru",
+            "him_soda",
+            "cement",
+            "les",
+            "seed",
+            "kont"
+    };
+
+    HashMap <String, Integer> dt1 = new HashMap<>();
+    HashMap <String, Integer> dt2 = new HashMap<>();
+    HashMap <String, Integer> dt3 = new HashMap<>();
+    HashMap <String, Integer> dt4 = new HashMap<>();
+    HashMap <String, Integer> mx = new HashMap<>();
+
+
     ArrayList<Values> values = new ArrayList<Values>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_values);
+
+        dt1.clear();
+        dt2.clear();
+        dt3.clear();
+        dt4.clear();
+        for (String i: keysP){
+            dt1.put(i, Integer.parseInt(Data._c1.get(i).toString()));
+            dt2.put(i, Integer.parseInt(Data._c2.get(i).toString()));
+            dt3.put(i, Integer.parseInt(Data._c3.get(i).toString()));
+            dt4.put(i, Integer.parseInt(Data._c4.get(i).toString()));
+        }
+        mx.put("ports_okt", 5);
+        mx.put("ports_sk", 5);
+        mx.put("ports_dv", 5);
+        mx.put("kam_ug", 10);
+        mx.put("koks", 6);
+        mx.put("oil", 6);
+        mx.put("iron", 6);
+        mx.put("bl_met", 6);
+        mx.put("str_gru", 6);
+        mx.put("him_soda", 4);
+        mx.put("cement", 4);
+        mx.put("les", 4);
+        mx.put("seed", 4);
+        mx.put("kont", 4);
     }
 
     @Override public void onBackPressed() {
@@ -203,19 +248,55 @@ public class Enter_values extends AppCompatActivity {
                         }
                         if (nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr")){
                             int v = Integer.parseInt(value);
-                            if (v % 10 != 0) return;
+                            if (v % 10 != 0) {
+                                Toast.makeText(Enter_values.this, "Проверьте правильность и повторите попытку.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
                         }
                         if (Data._move == 1) {
-                            Data._c1.put(nm, value);
+                            if (!(nm.equals("money") || nm.equals("vict_p") || nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr"))) {
+                                if (Math.abs(dt1.get(nm) - Integer.parseInt(value)) <= 3 && (Integer.parseInt(value) <= mx.get(nm))) {
+                                    Data._c1.put(nm, value);
+                                } else {
+                                    Toast.makeText(Enter_values.this, "Проверьте правильность и повторите попытку.", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            else Data._c1.put(nm, value);
                         }
                         else if (Data._move == 2) {
-                            Data._c2.put(nm, value);
+                            if (!(nm.equals("money") || nm.equals("vict_p") || nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr"))) {
+
+                                if (Math.abs(dt2.get(nm) - Integer.parseInt(value)) <= 3 && (Integer.parseInt(value) <= mx.get(nm))) {
+                                    Data._c2.put(nm, value);
+                                } else {
+                                    Toast.makeText(Enter_values.this, "Проверьте правильность и повторите попытку.", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            else Data._c2.put(nm, value);
                         }
                         else if (Data._move == 3) {
-                            Data._c3.put(nm, value);
+                            if (!(nm.equals("money") || nm.equals("vict_p") || nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr"))) {
+                                if (Math.abs(dt3.get(nm) - Integer.parseInt(value)) <= 3 && (Integer.parseInt(value) <= mx.get(nm))) {
+                                    Data._c3.put(nm, value);
+                                } else {
+                                    Toast.makeText(Enter_values.this, "Проверьте правильность и повторите попытку.", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            else Data._c3.put(nm, value);
                         }
                         else if (Data._move == 4) {
-                            Data._c4.put(nm, value);
+                            if (!(nm.equals("money") || nm.equals("vict_p") || nm.equals("pv") || nm.equals("cis") || nm.equals("pl") || nm.equals("kr"))) {
+                                if (Math.abs(dt4.get(nm) - Integer.parseInt(value)) <= 3 && (Integer.parseInt(value) <= mx.get(nm))) {
+                                    Data._c4.put(nm, value);
+                                } else {
+                                    Toast.makeText(Enter_values.this, "Проверьте правильность и повторите попытку.", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            else Data._c4.put(nm, value);
                         }
 
                         values.get(Arrays.asList(keys).indexOf(nm)).setValue(value);

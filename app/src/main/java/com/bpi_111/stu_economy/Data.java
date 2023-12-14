@@ -1,7 +1,5 @@
 package com.bpi_111.stu_economy;
 
-import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,9 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Data {
     public static HashMap<String, Object> _c1 = new HashMap<>();
 
@@ -23,7 +18,7 @@ public class Data {
     public static int _year = 1;
     public static boolean _cubes = true;
     public static int _move = 1; // Не сохраняется
-    public static int _leader = 0;
+    public static String[] _leader = new String[4];
     public static int _new_comm_inp = 1;
     public static int _dark_theme = 0;
     public static int _simple_mode = 0;
@@ -128,7 +123,7 @@ public class Data {
     public static void setDefault(){
         _year = 1;
         _move = 1;
-        _leader = 0;
+        _leader[0] = "";
 
         _c1.put("name", "");
         _c1.put("points", 0);

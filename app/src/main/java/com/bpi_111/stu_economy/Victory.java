@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class Victory extends AppCompatActivity {
 
     @Override
@@ -33,22 +31,12 @@ public class Victory extends AppCompatActivity {
         Data._end = 1;
         Data.save();
 
-        if (Data._leader == 1){
-            tv.setText(Data._c1.get("name").toString());
-            tv.setTextColor(getResources().getColor(R.color.red));
+        String s = "";
+
+        for (int i = 0; i < 4; i++){
+            if (Data._leader[i] != "") s += Data._leader[i] + "\n";
         }
-        if (Data._leader == 2){
-            tv.setText(Data._c2.get("name").toString());
-            tv.setTextColor(getResources().getColor(R.color.blue));
-        }
-        if (Data._leader == 3){
-            tv.setText(Data._c1.get("name").toString());
-            tv.setTextColor(getResources().getColor(R.color.green));
-        }
-        if (Data._leader == 4){
-            tv.setText(Data._c1.get("name").toString());
-            tv.setTextColor(getResources().getColor(R.color.yellow));
-        }
+        tv.setText(s);
         tv.animate().alpha(1).setDuration(1500).start();
     }
 

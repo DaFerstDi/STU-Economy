@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -271,7 +270,6 @@ public class Score extends AppCompatActivity {
         if (c1>=c2 && c1>=c3 && c1>=c4){
             p1.setText("1: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
             p1.setTextColor(getResources().getColor(R.color.red));
-            Data._leader = 1;
             if (c2>=c3 && c2>=c4){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
                 p2.setTextColor(getResources().getColor(R.color.blue));
@@ -325,7 +323,6 @@ public class Score extends AppCompatActivity {
         else if (c2>=c1 && c2>=c3 && c2>=c4){
             p1.setText("1: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
             p1.setTextColor(getResources().getColor(R.color.blue));
-            Data._leader = 2;
             if (c1>=c3 && c1>=c4){
                 p2.setText("2: " + Data._c1.get("name").toString() + ": (" + c1 + ")");
                 p2.setTextColor(getResources().getColor(R.color.red));
@@ -379,7 +376,6 @@ public class Score extends AppCompatActivity {
         else if (c3>=c1 && c3>=c2 && c3>=c4){
             p1.setText("1: " + Data._c3.get("name").toString() + ": (" + c3 + ")");
             p1.setTextColor(getResources().getColor(R.color.green));
-            Data._leader = 3;
             if (c2>=c1 && c2>=c4){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
                 p2.setTextColor(getResources().getColor(R.color.blue));
@@ -433,7 +429,6 @@ public class Score extends AppCompatActivity {
         else {
             p1.setText("1: " + Data._c4.get("name").toString() + ": (" + c4 + ")");
             p1.setTextColor(getResources().getColor(R.color.yellow));
-            Data._leader = 4;
             if (c2>=c3 && c2>=c1){
                 p2.setText("2: " + Data._c2.get("name").toString() + ": (" + c2 + ")");
                 p2.setTextColor(getResources().getColor(R.color.blue));
@@ -483,8 +478,19 @@ public class Score extends AppCompatActivity {
                 }
             }
         }
-
-
+        long mx = 0;
+        Data._leader[0] = "";
+        Data._leader[1] = "";
+        Data._leader[2] = "";
+        Data._leader[3] = "";
+        if (c1 > mx) mx = c1;
+        if (c2 > mx) mx = c2;
+        if (c3 > mx) mx = c3;
+        if (c4 > mx) mx = c4;
+        if (c1 == mx) Data._leader[0] = Data._c1.get("name").toString();
+        if (c2 == mx) Data._leader[1] = Data._c2.get("name").toString();
+        if (c3 == mx) Data._leader[2] = Data._c3.get("name").toString();
+        if (c4 == mx) Data._leader[3] = Data._c4.get("name").toString();
     }
 
 
