@@ -311,15 +311,18 @@ public class Cubes extends AppCompatActivity {
                             }
                             else {
                                 Data._move = 1;
-                                if (Data._simple_mode == 1)
+                                if (Data._simple_mode >= 1)
                                 {
-                                    Data._year += 1;
+                                    if (Data._circle == 4) Data._year += 1;
                                     Data._cubes = true;
                                     Intent intent = new Intent(V.getContext(), Year_display.class);
                                     startActivity(intent);
                                 }
                                 else {
-                                    Data._cubes = false;
+                                    if (Data._circle >= 4) {
+                                        Data._circle = 1;
+                                        Data._cubes = false;
+                                    }
                                     Intent intent = new Intent(V.getContext(), Year_display.class);
                                     startActivity(intent);
                                 }

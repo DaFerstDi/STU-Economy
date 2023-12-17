@@ -16,6 +16,7 @@ public class Data {
     public static HashMap<String, Object> _c3 = new HashMap<>();
     public static HashMap<String, Object> _c4 = new HashMap<>();
     public static int _year = 1;
+    public static int _circle = 1;
     public static boolean _cubes = true;
     public static int _move = 1; // Не сохраняется
     public static String[] _leader = new String[4];
@@ -122,6 +123,7 @@ public class Data {
 
     public static void setDefault(){
         _year = 1;
+        _circle = 1;
         _move = 1;
         _leader[0] = "";
 
@@ -226,6 +228,7 @@ public class Data {
         }
 
         _cubes = true;
+        _circle = 1;
 
         String s = "";
 

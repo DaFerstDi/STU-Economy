@@ -32,7 +32,7 @@ public class Year_display extends AppCompatActivity {
         iv.animate().x(1500).setDuration(2000).start();
         if (Data._cubes) {
             tv.setTextSize(50);
-            tv.setText("ГОД " + Data._year);
+            tv.setText("ГОД " + Data._year + "\nКРУГ " + Data._circle);
         }
         else {
             tv.setTextSize(40);
@@ -49,11 +49,13 @@ public class Year_display extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                if (Data._cubes) {
+                if (Data._cubes && Data._circle <= 4) {
+                    Data._circle += 1;
                     Intent intent = new Intent(getApplicationContext(), Cubes.class);
                     startActivity(intent);
                 }
                 else {
+                    Data._circle = 1;
                     Intent intent = new Intent(getApplicationContext(), Enter_values.class);
                     startActivity(intent);
                 }
