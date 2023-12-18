@@ -4,7 +4,7 @@
     <string name="app_version">1.47</string>
     <string name="name">RSM</string>
     <string name="newgame">Новая игра</string>
-    <string name="continuegame">Продолжить игру</string>
+    <string name="continuegame">Продолжить</string>
     <string name="main_play">Играть</string>
     <string name="exit_ask">Вы действительно хотите выйти?</string>
     <string name="yes">Да</string>
