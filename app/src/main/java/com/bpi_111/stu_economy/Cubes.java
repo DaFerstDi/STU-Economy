@@ -56,9 +56,9 @@ public class Cubes extends AppCompatActivity {
         EditText bt = findViewById(R.id.editTextText7);
         EditText rt = findViewById(R.id.editTextText8);
 
-        yt.setText("4");
-        bt.setText("4");
-        rt.setText("4");
+        yt.setText("0");
+        bt.setText("0");
+        rt.setText("0");
 
         if (Data._move == 1) {
             cn.setText("Команда:\n" + Data._c1.get("name").toString());
@@ -311,23 +311,37 @@ public class Cubes extends AppCompatActivity {
                             }
                             else {
                                 Data._move = 1;
-                                if (Data._simple_mode >= 1)
-                                {
-                                    if (Data._circle > 4) {
+                                if (Data._short_game == 1){
+                                    if (Data._simple_mode == 1)
+                                    {
                                         Data._year += 1;
-                                        Data._circle = 1;
+                                        Data._cubes = true;
+                                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                                        startActivity(intent);
                                     }
-                                    Data._cubes = true;
-                                    Intent intent = new Intent(V.getContext(), Year_display.class);
-                                    startActivity(intent);
+                                    else {
+                                        Data._cubes = false;
+                                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                                        startActivity(intent);
+                                    }
                                 }
                                 else {
-                                    if (Data._circle >= 4) {
-                                        Data._circle = 1;
-                                        Data._cubes = false;
+                                    if (Data._simple_mode >= 1) {
+                                        if (Data._circle > 4) {
+                                            Data._year += 1;
+                                            Data._circle = 1;
+                                        }
+                                        Data._cubes = true;
+                                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                                        startActivity(intent);
+                                    } else {
+                                        if (Data._circle > 4) {
+                                            Data._circle = 1;
+                                            Data._cubes = false;
+                                        }
+                                        Intent intent = new Intent(V.getContext(), Year_display.class);
+                                        startActivity(intent);
                                     }
-                                    Intent intent = new Intent(V.getContext(), Year_display.class);
-                                    startActivity(intent);
                                 }
                             }
                         }

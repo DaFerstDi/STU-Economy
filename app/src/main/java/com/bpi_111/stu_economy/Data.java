@@ -23,6 +23,7 @@ public class Data {
     public static int _new_comm_inp = 1;
     public static int _dark_theme = 0;
     public static int _simple_mode = 0;
+    public static int _short_game = 1;
     public static int _end = 0;
 
     static {
@@ -369,6 +370,7 @@ public class Data {
             String[] sp = s.split("\n");
             _dark_theme = Integer.parseInt(sp[0].split("&")[0]);
             _simple_mode = Integer.parseInt(sp[0].split("&")[1]);
+            _short_game = Integer.parseInt(sp[0].split("&")[2]);
             return true;
         }
         catch (Exception ex){
@@ -377,7 +379,9 @@ public class Data {
     }
 
     public static void saveSett(){
-        String text = String.format((Integer) _dark_theme + "&" + (Integer) _simple_mode + "&");
+        String text = String.format((Integer) _dark_theme + "&" +
+                (Integer) _simple_mode + "&" +
+                (Integer) _short_game + "&");
 
         try(FileOutputStream fos = new FileOutputStream("/data/data/com.bpi_111.stu_economy/settings"))
         {

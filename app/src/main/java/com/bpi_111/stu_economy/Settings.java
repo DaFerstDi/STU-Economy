@@ -28,8 +28,11 @@ public class Settings extends AppCompatActivity {
         overridePendingTransition(0, 0);
         //CheckBox cb = findViewById(R.id.checkBox);
         CheckBox cb2 = findViewById(R.id.checkBox2);
+        CheckBox cb3 = findViewById(R.id.checkBox3);
         //cb.setChecked(Data._dark_theme == 1);
         cb2.setChecked(Data._simple_mode == 1);
+        cb3.setChecked(Data._short_game == 1);
+
 
 
 
@@ -66,6 +69,21 @@ public class Settings extends AppCompatActivity {
             Data._simple_mode = 0;
             Data.saveSett();
             Toast.makeText(this, "Подсчёт очков включен.\nПрогресс сохраняется.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onClickCk3(View v) {
+
+        CheckBox cb3 = findViewById(R.id.checkBox3);
+        if (cb3.isChecked()){
+            Data._short_game = 1;
+            Data.saveSett();
+            Toast.makeText(this, "Год длится один круг.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Data._short_game = 0;
+            Data.saveSett();
+            Toast.makeText(this, "Год длится четыре круга.", Toast.LENGTH_SHORT).show();
         }
 
     }
