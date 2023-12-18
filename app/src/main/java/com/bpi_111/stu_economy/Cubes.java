@@ -56,9 +56,9 @@ public class Cubes extends AppCompatActivity {
         EditText bt = findViewById(R.id.editTextText7);
         EditText rt = findViewById(R.id.editTextText8);
 
-        yt.setText("0");
-        bt.setText("0");
-        rt.setText("0");
+        yt.setText("");
+        bt.setText("");
+        rt.setText("");
 
         if (Data._move == 1) {
             cn.setText("Команда:\n" + Data._c1.get("name").toString());
