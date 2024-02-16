@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="415dp"
-        android:layout_height="310dp"
-        android:layout_marginTop="56dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="30dp"
         android:contentDescription="@string/TRAIN"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,81 +19,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/train" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="213dp"
-        android:layout_height="63dp"
-        android:alpha="0"
-        android:fontFamily="serif"
-        android:rotationX="40"
-        android:rotationY="-41"
-        android:text="@string/name"
-        android:textAlignment="center"
-        android:textColor="@color/red"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.56" />
-
     <Button
         android:id="@+id/button"
-        android:layout_width="275dp"
+        android:layout_width="295dp"
         android:layout_height="70dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="320dp"
         android:backgroundTint="@color/btn"
-        android:onClick="goPlayActivity"
-        android:text="@string/main_play"
+        android:onClick="goPlayerActivity"
+        android:text="@string/command_play"
         android:textColor="@color/text"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="275dp"
+        android:layout_width="295dp"
         android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/btn"
-        android:onClick="goRulesActivity"
-        android:text="@string/main_rules"
+        android:onClick="goLeaderActivity"
+        android:text="@string/leader_play"
         android:textColor="@color/text"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="275dp"
+        android:layout_width="295dp"
         android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/btn"
-        android:onClick="goSettingsActivity"
-        android:text="@string/main_settings"
+        android:onClick="goRulesActivity"
+        android:text="@string/main_rules"
         android:textColor="@color/text"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="275dp"
+        android:layout_width="295dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/btn"
+        android:onClick="goReferenceActivity"
+        android:text="@string/main_reference"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="295dp"
         android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/btn"
         android:onClick="goAboutActivity"
         android:text="@string/main_about"
         android:textColor="@color/text"
-        android:textSize="24sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -104,5 +98,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/stu" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

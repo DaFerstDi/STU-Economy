@@ -1,4 +1,4 @@
-package com.woafes.stu_economy;
+package com.woafes.stu_economy.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.woafes.stu_economy.R;
+
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -16,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
     }
 
     @Override
@@ -27,26 +26,25 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(0,0);
     }
 
-    /*
-    public void goPlayActivity(View v){
-            Intent intent = new Intent(this, activity_game.class);
-            startActivity(intent);
+    public void goPlayerActivity(View v){
+        Intent intent = new Intent(this, PlayerActivity.class); // Пример перехода к другой Activity
+        startActivity(intent);
     }
+    public void goLeaderActivity(View v) {
+        // TODO: Переход к активити ведущего
+    }
+
     public void goRulesActivity(View v) {
-            Intent intent = new Intent(this, rules.class);
-            startActivity(intent);
+        // TODO: Переход к активити правил игры
     }
 
-    public void goAboutActivity(View v) {
-            Intent intent = new Intent(this, About.class);
-            startActivity(intent);
+    public void goReferenceActivity(View v) {
+        // TODO: Переход к активити справочных данных
     }
 
-    public void goSettingsActivity(View v) {
-            Intent intent = new Intent(this, Settings.class);
-            startActivity(intent);
+    public void goAboutActivity(View V) {
+        // TODO: Переход к активити "О приложении"
     }
-     */
 
     @Override public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

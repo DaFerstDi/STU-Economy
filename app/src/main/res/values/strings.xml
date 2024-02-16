@@ -3,14 +3,18 @@
     <string name="app_name">RSM</string>
     <string name="app_version">1.47</string>
     <string name="name">RSM</string>
+    <string name="copyright">Оператор подвижного состава (Rolling Stock Manager/RSM)©</string>
     <string name="newgame">Новая игра</string>
     <string name="continuegame">Продолжить</string>
-    <string name="main_play">Играть</string>
+    <string name="command_play">Режим игрока</string>
+    <string name="leader_play">Режим ведущего</string>
+    <string name="main_rules">Правила игры</string>
+    <string name="main_reference">Справочные данные</string>
     <string name="exit_ask">Вы действительно хотите выйти?</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="back">Назад</string>
-    <string name="main_rules">Правила</string>
+
     <string name="main_settings">Настройки</string>
     <string name="main_about">О приложении</string>
     <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича\n\nСоздатели игры:\nКорнеев Максим Владимирович\nЧистяков Александр Сергеевич
