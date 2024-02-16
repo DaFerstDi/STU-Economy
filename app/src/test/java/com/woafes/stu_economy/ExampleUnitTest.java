@@ -1,4 +1,4 @@
-package com.bpi_111.stu_economy;
+package com.woafes.stu_economy;
 
 import org.junit.Test;
 

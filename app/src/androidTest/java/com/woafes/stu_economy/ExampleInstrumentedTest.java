@@ -1,4 +1,4 @@
-package com.bpi_111.stu_economy;
+package com.woafes.stu_economy;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.bpi_111.stu_economy", appContext.getPackageName());
+        assertEquals("com.woafes.stu_economy", appContext.getPackageName());
     }
 }

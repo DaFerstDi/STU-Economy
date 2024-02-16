@@ -16,6 +16,7 @@
     <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича\n\nСоздатели игры:\nКорнеев Максим Владимирович\nЧистяков Александр Сергеевич
     </string>
     <string name="TRAIN">Это поезд</string>
+    <!--
     <string name="command_1">Команда 1</string>
     <string name="command_2">Команда 2</string>
     <string name="command_3">Команда 3</string>
@@ -52,4 +53,5 @@
     <string name="progressNoSave">Прогресс этого года сохранён не будет</string>
     <string name="simpleMode">Простой режим игры</string>
     <string name="short_game">Короткая игра</string>
+    -->
 </resources>

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.bpi_111.stu_economy"
+    namespace = "com.woafes.stu_economy"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.bpi_111.stu_economy"
+        applicationId = "com.woafes.stu_economy"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
