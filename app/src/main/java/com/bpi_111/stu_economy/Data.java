@@ -501,7 +501,7 @@ public class Data {
             byte[] buffer = text.getBytes();
 
             fos.write(buffer, 0, buffer.length);
-            System.out.println("The file has been written");
+            System.out.println("Запись произведена успешно");
         }
         catch(IOException ex){
 
