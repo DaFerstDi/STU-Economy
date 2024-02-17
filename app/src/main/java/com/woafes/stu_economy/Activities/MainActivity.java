@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goAboutActivity(View V) {
-        Intent intent = new Intent(this, AboutActivity.class);
-        startActivity(intent);
+        // правка
     }
 
     @Override public void onBackPressed() {
