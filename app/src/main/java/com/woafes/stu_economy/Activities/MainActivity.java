@@ -31,19 +31,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goLeaderActivity(View v) {
-        // TODO: Переход к активити ведущего
+        Intent intent = new Intent(this, LeaderActivity.class);
+        startActivity(intent);
     }
 
     public void goRulesActivity(View v) {
-        // TODO: Переход к активити правил игры
+        Intent intent = new Intent(this, RulesActivity.class);
+        startActivity(intent);
     }
 
     public void goReferenceActivity(View v) {
-        // TODO: Переход к активити справочных данных
+        Intent intent = new Intent(this, ReferenceActivity.class);
+        startActivity(intent);
     }
 
     public void goAboutActivity(View V) {
-        // TODO: Переход к активити "О приложении"
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     @Override public void onBackPressed() {
