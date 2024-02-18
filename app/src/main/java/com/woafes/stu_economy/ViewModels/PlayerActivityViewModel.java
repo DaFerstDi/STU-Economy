@@ -34,6 +34,8 @@ public class PlayerActivityViewModel extends ViewModel {
     public void onCleared(){
         super.onCleared();
 
+        BusStation.getBus().unregister(this);
+
         Log.e("AAA", "PlayerActivity VM destroyed");
     }
 

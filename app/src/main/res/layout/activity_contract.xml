@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:alpha="0"
         android:text="Текст"
         android:textAlignment="center"
         android:textColor="@color/text"
@@ -22,7 +23,7 @@
 
 
     <EditText
-        android:id="@+id/editTextText8"
+        android:id="@+id/editTextRed"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
         android:layout_marginTop="15dp"
@@ -33,10 +34,10 @@
         android:textColorHint="@color/lightRed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextBlue" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/editTextYellow"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
         android:layout_marginTop="200dp"
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText7"
+        android:id="@+id/editTextBlue"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
         android:layout_marginTop="15dp"
@@ -61,7 +62,7 @@
         android:textColorHint="@color/lightBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextYellow" />
 
     <Button
         android:id="@+id/button6"
@@ -74,6 +75,21 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextRed" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchContract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:checked="false"
+        android:text="@string/is_mainStage"
+        android:textColor="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRed"
+        app:showText="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

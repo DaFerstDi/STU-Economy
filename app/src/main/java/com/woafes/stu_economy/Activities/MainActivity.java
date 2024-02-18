@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPlayerActivity(View v){
-        Intent intent = new Intent(this, PlayerActivity.class); // Пример перехода к другой Activity
+        Intent intent = new Intent(MainActivity.this, PlayerActivity.class); // Пример перехода к другой Activity
         startActivity(intent);
     }
     public void goLeaderActivity(View v) {
@@ -41,13 +41,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goReferenceActivity(View v) {
+        /*
         Intent intent = new Intent(this, ReferenceActivity.class);
         startActivity(intent);
+         */
     }
 
     public void goAboutActivity(View V) {
+        /*
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
+         */
     }
 
     @Override public void onBackPressed() {

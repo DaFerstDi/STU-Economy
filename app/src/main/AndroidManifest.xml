@@ -17,6 +17,15 @@
         android:theme="@style/Theme.STUEconomy"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.CompCostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.RulesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LeaderActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.ContractActivity"
             android:exported="false" />
         <activity

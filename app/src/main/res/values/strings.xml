@@ -26,6 +26,17 @@
     <string name="Red">Красный кубик</string>
     <string name="Calculate">Расчитать</string>
 
+    <string name="contract">Контракт</string>
+    <string name="comp_cost">Стоимость компании</string>
+    <string name="next">Далее</string>
+    <string name="is_mainStage">Основной этап</string>
+
+    <string name="max_carriage">Больше вагонов</string>
+    <string name="max_points">Больше победных очков</string>
+
+    <string name="editValues">Изменение значения</string>
+    <string name="save">Сохранить</string>
+
     <!--
     <string name="command_1">Команда 1</string>
     <string name="command_2">Команда 2</string>

@@ -3,7 +3,9 @@ package com.woafes.stu_economy.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.woafes.stu_economy.EventBus.BusStation;
 import com.woafes.stu_economy.R;
@@ -19,5 +21,21 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player);
 
         vm = new ViewModelProvider(this).get(PlayerActivityViewModel.class);
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        overridePendingTransition(0,0);
+    }
+
+    public void goContractActivity(View V){
+        Intent intent = new Intent(this, ContractActivity.class);
+        startActivity(intent);
+    }
+
+    public void goCompCostActivity(View V){
+        Intent intent = new Intent(this, CompCostActivity.class);
+        startActivity(intent);
     }
 }
