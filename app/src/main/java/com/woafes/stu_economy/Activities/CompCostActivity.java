@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
 import android.widget.EditText;
 
 import com.woafes.stu_economy.Models.Values;
@@ -329,4 +331,10 @@ public class CompCostActivity extends AppCompatActivity {
         }
     }
      */
+
+    public void goPlayerActivity(View V) {
+        Intent intent = new Intent(this, PlayerActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
+    }
 }

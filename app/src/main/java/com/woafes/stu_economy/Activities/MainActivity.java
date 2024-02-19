@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goPlayerActivity(View v){
-        Intent intent = new Intent(MainActivity.this, PlayerActivity.class); // Пример перехода к другой Activity
+        Intent intent = new Intent(this, PlayerActivity.class); // Пример перехода к другой Activity
         startActivity(intent);
     }
     public void goLeaderActivity(View v) {

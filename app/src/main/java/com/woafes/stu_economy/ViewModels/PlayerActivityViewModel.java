@@ -33,6 +33,7 @@ public class PlayerActivityViewModel extends ViewModel {
     @Override
     public void onCleared(){
         super.onCleared();
+        Log.e("AAA", "PlayerActivity VM cleared");
 
         BusStation.getBus().unregister(this);
 

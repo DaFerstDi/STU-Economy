@@ -38,4 +38,19 @@ public class PlayerActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CompCostActivity.class);
         startActivity(intent);
     }
+
+    public void goRulesActivity(View V){
+        Intent intent = new Intent(this, RulesActivity.class);
+        startActivity(intent);
+    }
+
+    public void goReferenceActivity(View V){
+        Intent intent = new Intent(this, ReferenceActivity.class);
+        startActivity(intent);
+    }
+
+    public void goMainActivity(View V){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
