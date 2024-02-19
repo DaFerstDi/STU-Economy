@@ -41,17 +41,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goReferenceActivity(View v) {
-        /*
         Intent intent = new Intent(this, ReferenceActivity.class);
         startActivity(intent);
-         */
     }
 
     public void goAboutActivity(View V) {
-        /*
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
-         */
     }
 
     @Override public void onBackPressed() {

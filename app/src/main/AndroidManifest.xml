@@ -17,6 +17,9 @@
         android:theme="@style/Theme.STUEconomy"
         tools:targetApi="31">
         <activity
+            android:name="com.woafes.stu_economy.Activities.ReferenceActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.CompCostActivity"
             android:exported="false" />
         <activity
@@ -31,7 +34,9 @@
         <activity
             android:name=".Activities.PlayerActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".Activities.AboutActivity"
+            android:exported="false" />
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/custom" />
