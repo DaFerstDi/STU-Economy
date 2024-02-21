@@ -13,6 +13,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
 public class DataBase {
     private static DataBase instance;
@@ -27,7 +30,19 @@ public class DataBase {
 
     public void savePlayer(Command command) throws JSONException {
         JSONObject playerData = new JSONObject();
+        Calendar cld = Calendar.getInstance();
+        String month = ("0000" + (cld.get(Calendar.MONTH) + 1));
+        month = month.substring(month.length() - 2);
+        String day = ("0000" + cld.get(Calendar.DATE));
+        day = day.substring(day.length() - 2);
+        String hour = ("0000" + cld.get(Calendar.HOUR_OF_DAY));
+        hour = hour.substring(hour.length() - 2);
+        String minute = ("0000" + cld.get(Calendar.MINUTE));
+        minute = minute.substring(minute.length() - 2);
 
+        String date = day + "." + month + "." + cld.get(Calendar.YEAR) + " " + hour + ":" + minute;
+
+        playerData.put("last_save", date);
         playerData.put("name", command.get_name());
         playerData.put("_is_maxCarriage", command.is_maxCarriage());
         playerData.put("_is_maxPoints", command.is_maxPoints());
@@ -54,7 +69,7 @@ public class DataBase {
 
         String playerDataString = playerData.toString(1);
 
-        try(FileOutputStream fos = new FileOutputStream("/data/data/com.daferstdi.testviewactivity/files/player"))
+        try(FileOutputStream fos = new FileOutputStream("/data/data/com.woafes.stu_economy/files/player"))
         {
             byte[] buffer = playerDataString.getBytes();
 
@@ -73,7 +88,7 @@ public class DataBase {
         Command command = new Command("");
         String json = "";
         JSONObject playerData;
-        try (FileInputStream fin = new FileInputStream("/data/data/com.daferstdi.testviewactivity/files/player");
+        try (FileInputStream fin = new FileInputStream("/data/data/com.woafes.stu_economy/files/player");
              InputStreamReader isr = new InputStreamReader(fin, StandardCharsets.UTF_8);
              BufferedReader reader = new BufferedReader(isr)) {
             int i;
@@ -83,6 +98,7 @@ public class DataBase {
 
             playerData = new JSONObject(json);
 
+            command.set_lastSave(playerData.getString("last_save"));
             command.set_name(playerData.getString("name"));
             command.set_is_maxCarriage(playerData.getBoolean("_is_maxCarriage"));
             command.set_is_maxPoints(playerData.getBoolean("_is_maxPoints"));
@@ -113,6 +129,7 @@ public class DataBase {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+        Log.e("AAA", "The file has been read");
         return command;
     }
 

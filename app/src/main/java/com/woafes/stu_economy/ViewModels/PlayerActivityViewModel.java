@@ -9,19 +9,30 @@ import androidx.lifecycle.ViewModel;
 import com.squareup.otto.Produce;
 import com.squareup.otto.Subscribe;
 import com.woafes.stu_economy.EventBus.BusStation;
-import com.woafes.stu_economy.EventBus.ComandEvent;
+import com.woafes.stu_economy.EventBus.CommandEvent;
 import com.woafes.stu_economy.Models.Command;
+import com.woafes.stu_economy.Repository.DataBase;
+
+import org.json.JSONException;
 
 public class PlayerActivityViewModel extends ViewModel {
-    private Command command; // Переменная, хранящая данные для передатчика
+    private Command _command; // Переменная, хранящая данные для передатчика
     final private MutableLiveData<Command> commandMutableLiveData; // передатчик
+    //final private MutableLiveData<String>
 
     public PlayerActivityViewModel(){
-        command = new Command("Игрок");
-        commandMutableLiveData = new MutableLiveData<>(command);
+        try {
+            DataBase db = DataBase.getInstance();
+            _command = db.getPlayer();
+        }
+        catch (Exception e){
+            Log.e("AAA", e.getMessage());
+            _command = new Command("Игрок");
+        }
+        commandMutableLiveData = new MutableLiveData<>(_command);
 
         BusStation.getBus().register(this);
-        BusStation.getBus().post(new ComandEvent(command));
+        BusStation.getBus().post(new CommandEvent(_command));
 
         Log.e("AAA", "PlayerActivity VM created");
     }
@@ -30,24 +41,36 @@ public class PlayerActivityViewModel extends ViewModel {
         return commandMutableLiveData;
     }
 
+    public void  set_command(Command command){
+        _command = command;
+        commandMutableLiveData.setValue(command);
+        BusStation.getBus().post(new CommandEvent(_command));
+    }
+
     @Override
     public void onCleared(){
         super.onCleared();
-        Log.e("AAA", "PlayerActivity VM cleared");
+        DataBase db = DataBase.getInstance();
+        try {
+            db.savePlayer(_command);
+        } catch (Exception e) {
+            Log.e("AAA", e.getMessage());
+        }
+
 
         BusStation.getBus().unregister(this);
 
-        Log.e("AAA", "PlayerActivity VM destroyed");
+        Log.e("AAA", "PlayerActivity VM cleared");
     }
 
     @Produce
-    public ComandEvent produceAnswer(){
-        return new ComandEvent(this.command);
+    public CommandEvent produceAnswer(){
+        return new CommandEvent(_command);
     }
     @Subscribe
-    public void update(ComandEvent event){
-        command = event.command;
-        commandMutableLiveData.setValue(command);
+    public void update(CommandEvent event){
+        _command = event.command;
+        commandMutableLiveData.setValue(_command);
     }
 
 }

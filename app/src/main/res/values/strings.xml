@@ -9,7 +9,7 @@
     <string name="command_play">Режим игрока</string>
     <string name="leader_play">Режим ведущего</string>
     <string name="main_rules">Правила игры</string>
-    <string name="main_reference">Справочные данные</string>
+    <string name="main_reference">Справочник</string>
     <string name="exit_ask">Вы действительно хотите выйти?</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
@@ -36,6 +36,11 @@
 
     <string name="editValues">Изменение значения</string>
     <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+
+    <string name="load_game">Загрузить игру?</string>
+    <string name="last_save">Последнее сохранение: </string>
+    <string name="load">Загрузить</string>
 
     <!--
     <string name="command_1">Команда 1</string>
