@@ -27,6 +27,15 @@ public class CompCostViewModel extends ViewModel {
         BusStation.getBus().post(new CommandEvent(_command));
     }
 
+    public void setIsMaxCarriage(boolean val){
+        _command.set_is_maxCarriage(val);
+        BusStation.getBus().post(new CommandEvent(_command));
+    }
+    public void setIsMaxPoints(boolean val){
+        _command.set_is_maxPoints(val);
+        BusStation.getBus().post(new CommandEvent(_command));
+    }
+
     public LiveData<Command> get_Command(){
         return commandMutableLiveData;
     }

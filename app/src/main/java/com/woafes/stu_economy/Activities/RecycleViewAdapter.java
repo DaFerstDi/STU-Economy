@@ -99,7 +99,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
                     AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
                     alert.setTitle(R.string.editValues);
-                    alert.setMessage("Введите новое значение для " + name.getText().toString());
+                    alert.setMessage("Введите новое значение для \n\"" + name.getText().toString() + "\"");
                     EditText input = new EditText(v.getContext());
                     input.setInputType(InputType.TYPE_CLASS_NUMBER);
 
@@ -110,6 +110,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                             try {
                                 String valS = input.getText().toString();
                                 valS = valS.replaceAll("^0+","");
+                                if (valS.equals("")) {valS = "0";}
                                 int val = Integer.parseInt(valS);
                                 _command.getResByName(name.getText().toString()).set_value(val);
                                 value.setText(String.valueOf(val));

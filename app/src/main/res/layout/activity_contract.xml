@@ -85,7 +85,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="50dp"
         android:checked="false"
-        android:text="@string/is_mainStage"
+        android:text="@string/is_startStage"
         android:textColor="@color/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

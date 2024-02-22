@@ -7,19 +7,16 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Switch;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.woafes.stu_economy.Models.Contract;
 import com.woafes.stu_economy.R;
 import com.woafes.stu_economy.ViewModels.ContractActivityViewModel;
-import com.woafes.stu_economy.ViewModels.PlayerActivityViewModel;
 
 public class ContractActivity extends AppCompatActivity {
 
@@ -65,6 +62,20 @@ public class ContractActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         overridePendingTransition(0,0);
+
+        SwitchCompat switchCompat = findViewById(R.id.switchContract);
+
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (!switchCompat.isChecked()){
+                    switchCompat.setText(getText(R.string.is_startStage));
+                }
+                else {
+                    switchCompat.setText(getText(R.string.is_mainStage));
+                }
+            }
+        });
     }
 
     public void calculate(View V){
@@ -81,6 +92,9 @@ public class ContractActivity extends AppCompatActivity {
 
             if (yellow > 1 && yellow < 13 && blue > 1 && blue < 13 && red > 0 && red < 7) {
                 vm.getContractByDice(yellow, blue, red, mainStage);
+                yellowT.setText("");
+                blueT.setText("");
+                redT.setText("");
             }
             else {
                 Toast.makeText(this, "Проверьте правильность ввода и повторите попытку.", Toast.LENGTH_SHORT).show();
