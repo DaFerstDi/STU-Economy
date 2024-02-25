@@ -21,22 +21,27 @@
             android:exported="false" />
         <activity
             android:name=".Activities.CompCostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.RulesActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.LeaderActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ContractActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.PlayerActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.AboutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/custom" />

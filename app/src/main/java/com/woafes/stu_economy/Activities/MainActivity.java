@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.woafes.stu_economy.R;
 
@@ -31,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goLeaderActivity(View v) {
+        /*
         Intent intent = new Intent(this, LeaderActivity.class);
         startActivity(intent);
+         */
+        Toast.makeText(this, "Скоро.", Toast.LENGTH_SHORT).show();
     }
 
     public void goRulesActivity(View v) {

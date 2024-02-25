@@ -7,7 +7,7 @@
     <string name="newgame">Новая игра</string>
     <string name="continuegame">Продолжить</string>
     <string name="command_play">Режим игрока</string>
-    <string name="leader_play">Режим ведущего</string>
+    <string name="leader_play">🔒Режим ведущего</string>
     <string name="main_rules">Правила игры</string>
     <string name="main_reference">Справочник</string>
     <string name="exit_ask">Вы действительно хотите выйти?</string>
