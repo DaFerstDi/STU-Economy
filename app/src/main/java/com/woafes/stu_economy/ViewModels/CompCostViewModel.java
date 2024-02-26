@@ -7,14 +7,20 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.squareup.otto.Subscribe;
+import com.woafes.stu_economy.Activities.CostCalculator;
 import com.woafes.stu_economy.EventBus.BusStation;
 import com.woafes.stu_economy.EventBus.CommandEvent;
 import com.woafes.stu_economy.Models.Command;
+import com.woafes.stu_economy.Models.Contract;
 
 public class CompCostViewModel extends ViewModel {
 
     private Command _command;
     final private MutableLiveData<Command> commandMutableLiveData;
+    private MutableLiveData<Long> costMutableLiveData = new MutableLiveData<>();
+    public LiveData<Long> getCost(){
+        return costMutableLiveData;
+    }
 
     public CompCostViewModel(){
         _command = new Command("");
@@ -34,6 +40,10 @@ public class CompCostViewModel extends ViewModel {
     public void setIsMaxPoints(boolean val){
         _command.set_is_maxPoints(val);
         BusStation.getBus().post(new CommandEvent(_command));
+    }
+
+    public void getCompCost(){
+        costMutableLiveData.setValue(CostCalculator.Calculate(_command));
     }
 
     public LiveData<Command> get_Command(){

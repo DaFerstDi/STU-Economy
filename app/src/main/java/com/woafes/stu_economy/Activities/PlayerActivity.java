@@ -84,7 +84,7 @@ public class PlayerActivity extends AppCompatActivity {
                 getString(R.string.load),
                 getString(R.string.newgame));
 
-        dialog.setCancelable(true);
+        dialog.setCancelable(false);
         dialog.setYesClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

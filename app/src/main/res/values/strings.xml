@@ -32,9 +32,9 @@
     <string name="is_mainStage">Основной этап</string>
     <string name="is_startStage">Начальный этап</string>
 
-
     <string name="max_carriage">Лидер по количеству вагонов</string>
     <string name="max_points">Лидер по количеству победных очков</string>
+    <string name="comp_your_cost">Стоимость Вашей компании: </string>
 
     <string name="editValues">Изменение значения</string>
     <string name="save">Сохранить</string>

@@ -94,4 +94,7 @@ public class DialogShower {
         this.dialog.setCancelable(cancelable);
     }
 
+    public EditText get_editText() {
+        return _editText;
+    }
 }

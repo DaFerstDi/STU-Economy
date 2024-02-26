@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.woafes.stu_economy.Models.Command;
+import com.woafes.stu_economy.Models.DialogShower;
 import com.woafes.stu_economy.Models.Values;
 import com.woafes.stu_economy.R;
 import com.woafes.stu_economy.ViewModels.CompCostViewModel;
@@ -46,6 +47,25 @@ public class CompCostActivity extends AppCompatActivity {
             @Override
             public void onChanged(Command command) {
                 _command = command;
+            }
+        });
+
+        vm.getCost().observe(this, new Observer<Long>() {
+            @Override
+            public void onChanged(Long aLong) {
+                DialogShower dialog = new DialogShower(CompCostActivity.this,
+                        getString(R.string.comp_cost),
+                        getString(R.string.comp_your_cost) + "\n" + String.valueOf(aLong),
+                        getString(R.string.next));
+
+                dialog.setYesClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.cancel();
+                    }
+                });
+
+                dialog.show();
             }
         });
 
@@ -88,6 +108,10 @@ public class CompCostActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
         Log.e("AAA", "CompCostActivity destroyed");
+    }
+
+    public void calculateCost(View v){
+        vm.getCompCost();
     }
 
     public void goPlayerActivity(View V) {

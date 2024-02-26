@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.woafes.stu_economy.Models.Command;
+import com.woafes.stu_economy.Models.DialogShower;
 import com.woafes.stu_economy.Models.Resource;
 import com.woafes.stu_economy.R;
 import com.woafes.stu_economy.ViewModels.CompCostViewModel;
@@ -97,6 +98,31 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 public void onClick(View v) {
                     final String _name = name.getText().toString();
 
+                    DialogShower dialog = new DialogShower(v.getContext(),
+                            v.getContext().getString(R.string.editValues),
+                            "Введите новое значение для \n\"" + name.getText().toString() + "\"",
+                            v.getContext().getString(R.string.save),
+                            true);
+                    EditText input = dialog.get_editText();
+                    dialog.setYesClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            try {
+                                String valS = input.getText().toString();
+                                valS = valS.replaceAll("^0+","");
+                                if (valS.equals("")) {valS = "0";}
+                                int val = Integer.parseInt(valS);
+                                _command.getResByName(name.getText().toString()).set_value(val);
+                                value.setText(String.valueOf(val));
+                                dialog.cancel();
+                            }
+                            catch (Exception e){
+                                Toast.makeText(v.getContext(), "Проверьте правильность ввода и повторите попытку.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                    /*
                     AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
                     alert.setTitle(R.string.editValues);
                     alert.setMessage("Введите новое значение для \n\"" + name.getText().toString() + "\"");
@@ -124,7 +150,8 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                         public void onClick(DialogInterface dialog, int whichButton) {
                         }
                     });
-                    alert.show();
+                     */
+                    dialog.show();
                 }
             });
         }

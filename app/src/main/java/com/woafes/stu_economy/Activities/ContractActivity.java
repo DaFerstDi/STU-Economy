@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.woafes.stu_economy.Models.Contract;
+import com.woafes.stu_economy.Models.DialogShower;
 import com.woafes.stu_economy.R;
 import com.woafes.stu_economy.ViewModels.ContractActivityViewModel;
 
@@ -38,6 +39,18 @@ public class ContractActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(Contract contract) {
 
+                    DialogShower dialog = new DialogShower(ContractActivity.this,
+                            getString(R.string.contract),
+                            "Груз: " + contract.get_cargo() + "\nВагоны: " + contract.get_carriage() + "\nТариф: " + contract.get_cost() * contract.get_carriage() / 10 + "\nНаправление: " + contract.get_destination(),
+                            getString(R.string.next));
+                    dialog.setYesClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    /*
                     AlertDialog.Builder builder = new AlertDialog.Builder(ContractActivity.this);
                     builder.setTitle(R.string.contract)
                             .setCancelable(true)
@@ -50,6 +63,8 @@ public class ContractActivity extends AppCompatActivity {
                                 }
                             });
                     AlertDialog dialog = builder.create();
+                    */
+
                     dialog.show();
                 }
             });

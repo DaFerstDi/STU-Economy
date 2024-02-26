@@ -55,6 +55,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="566dp"
         android:backgroundTint="@color/btn"
+        android:onClick="calculateCost"
         android:text="@string/comp_cost"
         android:textColor="@color/text"
         android:textSize="20sp"
