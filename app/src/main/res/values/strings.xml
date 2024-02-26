@@ -44,6 +44,11 @@
     <string name="last_save">Последнее сохранение: </string>
     <string name="load">Загрузить</string>
 
+    <string name="enter_text">Введите текст…</string>
+
+    <string name="exit">Выход</string>
+
+
     <!--
     <string name="command_1">Команда 1</string>
     <string name="command_2">Команда 2</string>

@@ -37,6 +37,7 @@ public class ContractActivity extends AppCompatActivity {
             vm.getContract().observe(this, new Observer<Contract>() {
                 @Override
                 public void onChanged(Contract contract) {
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(ContractActivity.this);
                     builder.setTitle(R.string.contract)
                             .setCancelable(true)

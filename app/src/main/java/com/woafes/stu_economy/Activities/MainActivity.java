@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.woafes.stu_economy.Models.DialogShower;
 import com.woafes.stu_economy.R;
 
 
@@ -55,22 +56,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.exit_ask)
-                .setCancelable(true)
-                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+        DialogShower dialog = new DialogShower(this,
+                getString(R.string.exit),
+                getString(R.string.exit_ask),
+                getString(R.string.yes),
+                getString(R.string.no));
+        dialog.setYesClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
                         finish();
                     }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                });
+        dialog.setNoClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                    public void onClick(View v) {
+                        dialog.cancel();
                     }
                 });
-        AlertDialog dialog = builder.create();
+
         dialog.show();
     }
 }
