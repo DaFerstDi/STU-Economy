@@ -25,11 +25,13 @@ import com.woafes.stu_economy.R;
 import com.woafes.stu_economy.ViewModels.CompCostViewModel;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
     private Command _command;
     private CompCostViewModel vm;
+    private Context ct;
 
     private final String [] _resList = {"Наличные",
             "Победные очки",
@@ -53,9 +55,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             "Грузы в контейнерах",
     };
 
-    public RecycleViewAdapter(CompCostViewModel viewModel){
+    public RecycleViewAdapter(CompCostViewModel viewModel, Context context){
         vm = viewModel;
-
+        ct = context;
         _command = vm.get_Command().getValue();
     }
 
@@ -79,7 +81,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public int getItemCount() {
-        return _command.getClass().getFields().length;
+        return _resList.length;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
@@ -121,36 +123,6 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                             }
                         }
                     });
-
-                    /*
-                    AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
-                    alert.setTitle(R.string.editValues);
-                    alert.setMessage("Введите новое значение для \n\"" + name.getText().toString() + "\"");
-                    EditText input = new EditText(v.getContext());
-                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
-
-                    input.setText(value.getText().toString());
-                    alert.setView(input);
-                    alert.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                            try {
-                                String valS = input.getText().toString();
-                                valS = valS.replaceAll("^0+","");
-                                if (valS.equals("")) {valS = "0";}
-                                int val = Integer.parseInt(valS);
-                                _command.getResByName(name.getText().toString()).set_value(val);
-                                value.setText(String.valueOf(val));
-                            }
-                            catch (Exception e){
-                                Toast.makeText(v.getContext(), "Проверьте правильность ввода и повторите попытку.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                    alert.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int whichButton) {
-                        }
-                    });
-                     */
                     dialog.show();
                 }
             });

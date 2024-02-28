@@ -75,7 +75,7 @@ public class CompCostActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setHasFixedSize(true);
 
-            adapter = new RecycleViewAdapter(vm);
+            adapter = new RecycleViewAdapter(vm, this);
             recyclerView.setAdapter(adapter);
         }
         catch (Exception e){
