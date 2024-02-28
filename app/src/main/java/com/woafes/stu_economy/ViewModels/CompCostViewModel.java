@@ -1,6 +1,8 @@
 package com.woafes.stu_economy.ViewModels;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -16,6 +18,7 @@ import com.woafes.stu_economy.Models.Contract;
 public class CompCostViewModel extends ViewModel {
 
     private Command _command;
+    public Context _context;
     final private MutableLiveData<Command> commandMutableLiveData;
     private MutableLiveData<Long> costMutableLiveData = new MutableLiveData<>();
     public LiveData<Long> getCost(){
@@ -26,6 +29,11 @@ public class CompCostViewModel extends ViewModel {
         _command = new Command("");
         commandMutableLiveData = new MutableLiveData<>(_command);
         BusStation.getBus().register(this);
+        Toast.makeText(_context, "ЖИВОЕ ОЗЕРО", Toast.LENGTH_SHORT).show();
+    }
+
+    public void setContext(Context c){
+        _context = c;
     }
 
     public void set_command(Command command){
@@ -55,7 +63,7 @@ public class CompCostViewModel extends ViewModel {
         super.onCleared();
 
         BusStation.getBus().unregister(this);
-
+        Toast.makeText(_context, "МЁРТВОЕ ОЗЕРО", Toast.LENGTH_SHORT).show();
         Log.e("AAA", "CompCost VM cleared");
     }
 

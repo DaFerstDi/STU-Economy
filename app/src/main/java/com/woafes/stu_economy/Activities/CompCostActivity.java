@@ -36,6 +36,7 @@ public class CompCostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comp_cost);
 
         vm = new ViewModelProvider(this).get(CompCostViewModel.class);
+        vm.setContext(this);
     }
 
     @Override

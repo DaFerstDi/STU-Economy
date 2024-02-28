@@ -100,7 +100,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 public void onClick(View v) {
                     final String _name = name.getText().toString();
 
-                    DialogShower dialog = new DialogShower(v.getContext(),
+                    DialogShower dialog = new DialogShower(ct,
                             v.getContext().getString(R.string.editValues),
                             "Введите новое значение для \n\"" + name.getText().toString() + "\"",
                             v.getContext().getString(R.string.save),
@@ -115,6 +115,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                                 if (valS.equals("")) {valS = "0";}
                                 int val = Integer.parseInt(valS);
                                 _command.getResByName(name.getText().toString()).set_value(val);
+                                vm.set_command(_command);
                                 value.setText(String.valueOf(val));
                                 dialog.cancel();
                             }

@@ -4,6 +4,18 @@
     <string name="app_version">1.47</string>
     <string name="name">RSM</string>
     <string name="copyright">Оператор подвижного состава (Rolling Stock Manager/RSM)©</string>
+    <string name="version">Версия 1.51</string>
+    <string name="stu">Сибирский государственный университет путей сообщения</string>
+    <string name="developers"><b>Разработчики приложения:</b>\n
+    Еременко Данила\n
+    Капранова Юлия\n
+    Литвинов Влад\n
+    Немцова Елизавета</string>
+    <string name="curator"><b>Куратор:</b>\n
+        Шматков Руслан Николаевич</string>
+    <string name="business"><b>Авторы бизнес-симуляции:</b>\n
+        Корнеев Максим Владимирович\n
+        Чистяков Александр Сергеевич</string>
     <string name="newgame">Новая игра</string>
     <string name="continuegame">Продолжить</string>
     <string name="command_play">Режим игрока</string>
@@ -17,8 +29,19 @@
 
     <string name="main_settings">Настройки</string>
     <string name="main_about">О приложении</string>
-    <string name="about">Данное приложение создано студентами первого курса\nфакультета Бизнес-информатики:\n\nЕременко Данила\nКапранова Юлия\nЛитвинов Владислав\nНемцова Елизавета\n\nПод руководством Шматкова Руслана Николаевича\n\nСоздатели игры:\nКорнеев Максим Владимирович\nЧистяков Александр Сергеевич
-    </string>
+    <string name="about"><b>Оператор подвижного состава (Rolling Stock Manager/RSM)©</b>\n
+        <b>Версия 1.51</b>\n
+        <b>Сибирский государственный университет путей сообщения</b>\n
+        <b>Разработчики приложения:</b>\n
+        Еременко Данила\n
+        Капранова Юлия\n
+        Литвинов Влад\n
+        Немцова Елизавета\n
+        <b>Куратор:</b>\n
+        Шматков Руслан Николаевич\n
+        <b>Авторы бизнес-симуляции:</b>\n
+        Корнеев Максим Владимирович\n
+        Чистяков Александр Сергеевич</string>
     <string name="TRAIN">Это поезд</string>
 
     <string name="Yellow">Сумма жёлтых кубиков</string>
@@ -44,7 +67,7 @@
     <string name="last_save">Последнее сохранение: </string>
     <string name="load">Загрузить</string>
 
-    <string name="enter_text">Введите текст…</string>
+    <string name="enter_text">Введите значение…</string>
 
     <string name="exit">Выход</string>
 
