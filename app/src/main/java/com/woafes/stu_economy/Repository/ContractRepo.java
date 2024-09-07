@@ -67,7 +67,7 @@ public class ContractRepo {
                 switch (blue){
                     case (2):{contract.set_destination("Свердловская ж.д."); contract.set_cost(800000); break;}
                     case (3):{contract.set_destination("Западно-Сибирская ж.д."); contract.set_cost(300000); break;}
-                    case (4):{contract.set_destination("Украина"); contract.set_cost(1380000); break;}
+                    case (4):{contract.set_destination("Беларусь"); contract.set_cost(1380000); break;}
                     case (5):{contract.set_destination("Московская ж.д."); contract.set_cost(1240000); break;}
                     case (6):{contract.set_destination("Московская ж.д."); contract.set_cost(1240000); break;}
                     case (7):{contract.set_destination("Юго-Восточная ж.д."); contract.set_cost(1260000); break;}
@@ -118,7 +118,7 @@ public class ContractRepo {
                 switch (blue){
                     case (2):{contract.set_destination("Беларусь"); contract.set_cost(1300000); break;}
                     case (3):{contract.set_destination("Северо-Кавказская ж.д."); contract.set_cost(1340000); break;}
-                    case (4):{contract.set_destination("Украина"); contract.set_cost(1360000); break;}
+                    case (4):{contract.set_destination("Беларусь"); contract.set_cost(1360000); break;}
                     case (5):{contract.set_destination("Западно-Сибирская ж.д."); contract.set_cost(300000); break;}
                     case (6):{contract.set_destination("Западно-Сибирская ж.д."); contract.set_cost(300000); break;}
                     case (7):{contract.set_destination("Октябрьская ж.д."); contract.set_cost(1300000); break;}

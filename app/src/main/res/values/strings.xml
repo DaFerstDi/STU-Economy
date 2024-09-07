@@ -47,7 +47,7 @@
     <string name="Yellow">Сумма жёлтых кубиков</string>
     <string name="Blue">Сумма синих кубиков</string>
     <string name="Red">Красный кубик</string>
-    <string name="Calculate">Расчитать</string>
+    <string name="Calculate">Рассчитать</string>
 
     <string name="contract">Контракт</string>
     <string name="comp_cost">Стоимость компании</string>
