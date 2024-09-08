@@ -2,6 +2,7 @@ package com.woafes.stu_economy.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -115,9 +116,13 @@ public class CompCostActivity extends AppCompatActivity {
     }
 
     public void goPlayerActivity(View V) {
+        this.finish();
+/*
         Intent intent = new Intent(this, PlayerActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
         finish();
+
+ */
     }
 }

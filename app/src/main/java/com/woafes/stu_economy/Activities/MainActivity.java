@@ -33,11 +33,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goLeaderActivity(View v) {
-        /*
-        Intent intent = new Intent(this, LeaderActivity.class);
+        Intent intent = new Intent(this, CommandActivity.class);
         startActivity(intent);
-         */
-        Toast.makeText(this, "Скоро.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Скоро.", Toast.LENGTH_SHORT).show();
     }
 
     public void goRulesActivity(View v) {
